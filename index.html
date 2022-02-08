@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js"
+      integrity="sha512-IkLiryZhI6G4pnA3bBZzYCT9Ewk87U4DGEOz+TnRD3MrKqaUitt+ssHgn2X/sxoM7FxCP/ROUp6wcxjH/GcI5Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.min.css"
+      integrity="sha512-YQlbvfX5C6Ym6fTUSZ9GZpyB3F92hmQAZTO5YjciedwAaGRI9ccNs4iw2QTCJiSPheUQZomZKHQtuwbHkA9lgw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div>
+        <nav class="nav">
+          <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="menu">
+            <li class="menu__item">
+              <a href="#about" class="menu__link">О преподавателе</a>
+            </li>
+            <li class="menu__item">
+              <a href="#courses" class="menu__link">Курсы</a>
+            </li>
+            <li class="menu__item">
+              <a href="#reviews" class="menu__link">Отзывы</a>
+            </li>
+            <li class="menu__item">
+              <a href="#contacts" class="menu__link">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <h1 class="h1">
+          Подготовка к экзаменам <br /><span class="h1_em"
+            >по английскому языку</span
+          >
+        </h1>
+        <p class="moto"><strong>English opens doors!</strong></p>
+        <a href="#courses" class="button button_link">Вперед за знаниями</a>
+      </div>
+      <div class="img-container">
+        <img src="./img/Intro photo.png" alt="Intro photo" />
+      </div>
+    </header>
+    <main>
+      <section class="section section_light">
+        <div class="highlights">
+          <div class="highlights__element">
+            <img class="highlights__icon" src="./img/019-exam.svg" alt="Exam" />
+            <h3 class="highlights__heading">Высокий балл на экзаменах</h3>
+            <p class="highlights__content">
+              Мои ученики стабильно набирают высокие баллы на экзаменах. Больше,
+              чем в среднем по стране.
+            </p>
+          </div>
+          <div class="highlights__element">
+            <img
+              class="highlights__icon"
+              src="./img/035-school.svg"
+              alt="School"
+            />
+            <h3 class="highlights__heading">Поступление в ВУЗы</h3>
+            <p class="highlights__content">
+              Ученики поступают в лучшие ВУЗы страны: МГУ, ВШЭ, МГИМО и др.
+            </p>
+          </div>
+          <div class="highlights__element">
+            <img
+              class="highlights__icon"
+              src="./img/090-studying.svg"
+              alt="Studying"
+            />
+            <h3 class="highlights__heading">25 лет преподавания</h3>
+            <p class="highlights__content">
+              Сотни успешных учеников за десятилетия преподавания.
+              Присоединяйтесь!
+            </p>
+          </div>
+          <div class="highlights__element">
+            <img
+              class="highlights__icon"
+              src="./img/093-gold-medal.svg"
+              alt="Gold medal"
+            />
+            <h3 class="highlights__heading">
+              Уникальная методика преподавания
+            </h3>
+            <p class="highlights__content">
+              За многие годы выработана методика, позволяющая с максимальной
+              эффективностью достигать поставленных целей.
+            </p>
+          </div>
+          <div class="highlights__element">
+            <img
+              class="highlights__icon"
+              src="./img/074-dictionary.svg"
+              alt="Dictionary"
+            />
+            <h3 class="highlights__heading">Только лучшие учебники</h3>
+            <p class="highlights__content">
+              Аутентичные пособия, которые я использую, проверены годами.
+              Забудьте о скучных однообразных учебниках.
+            </p>
+          </div>
+          <div class="highlights__element">
+            <img
+              class="highlights__icon"
+              src="./img/085-post-it.svg"
+              alt="Pin"
+            />
+            <h3 class="highlights__heading">Родитель всегда в курсе</h3>
+            <p class="highlights__content">
+              В течение всего времени обучения я держу контакт с родителями,
+              чтобы вместе решить возникающие трудности.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="section">
+        <h2 class="h2 h2_modified">О преподавателе</h2>
+        <div class="about__wrapper">
+          <figure>
+            <img
+              class="about__img"
+              src="./img/About photo.png"
+              alt="About photo"
+            />
+            <figcaption class="about__caption">Татьяна Михайловна Генина</figcaption>
+          </figure>
+          <div>
+            <ul class="about__facts facts">
+              <li class="facts__item"><span class="strong">25 лет</span> преподавания</li>
+              <li class="facts__item"><span class="strong">10 лет</span> преподавания в ВУЗе</li>
+              <li class="facts__item">
+                Квалификация подтверждена <span class="strong">Cambridge Assessment English</span> (CELTA -
+                Certificate in Teaching English to Speakers of Other Languages)
+              </li>
+              <li class="facts__item">
+                <span class="strong">Диплом</span> преподавателя английского языка <span class="strong">с отличием</span> (Московский
+                институт лингвистики и массовой коммуникации)
+              </li>
+              <li class="facts__item">
+                <span class="strong">Два</span>  высших образования (филологическое и лингвистическое)
+              </li>
+              <li class="facts__item"><span class="strong">Член жюри</span> Всероссийской Олимпиады</li>
+              <li class="facts__item">Постоянное <span class="strong">повышение квалификации</span></li>
+              <li class="facts__item"><span class="strong">Сотни</span> успешных учеников</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="section section_light" id="courses">
+        <h2 class="h2">Давайте учиться!</h2>
+        <p class="subheading">Выберите цель, которая подходит именно вам</p>
+        <div class="courses">
+          <div class="courses__element course">
+            <img
+              class="course__img"
+              src="./img/100-reading.svg"
+              alt="Reading"
+            />
+            <h4 class="course__heading">Повышение успеваемости</h4>
+            <a class="button" href="#performance">Узнать больше</a>
+          </div>
+          <div class="courses__element course">
+            <img class="course__img" src="./img/060-books.svg" alt="Books" />
+            <h4 class="course__heading">Подготовка к ОГЭ и ЕГЭ</h4>
+            <a class="button" href="#ege">Узнать больше</a>
+          </div>
+          <div class="courses__element course">
+            <img
+              class="course__img"
+              src="./img/073-mortarboard.svg"
+              alt="Mortarboard"
+            />
+            <h4 class="course__heading">
+              Подготовка к международным экзаменам
+            </h4>
+            <a class="button" href="#exams">Узнать больше</a>
+          </div>
+        </div>
+      </section>
+      <section class="section performance" id="performance">
+        <h2 class="h2">Повышение <span class="h2_em">успеваемости</span></h2>
+        <p class="subheading">
+          Цель - справляться со школьной программой самостоятельно
+        </p>
+        <ul class="aims">
+          <li class="aims__element">
+            Детальный разбор ошибок на контрольных работах и тестах
+          </li>
+          <li class="aims__element">Тестирование перед началом занятий</li>
+          <li class="aims__element">Выстраивание грамматической базы</li>
+          <li class="aims__element">Регулярные лексические тесты</li>
+          <li class="aims__element">Использование британских пособий</li>
+          <li class="aims__element">
+            Помощь в выполнении школьной домашней работы
+          </li>
+          <li class="aims__element">
+            Возможна работа на опережение школьной программы
+          </li>
+          <li class="aims__element">
+            Проведение пробных тестов позволяет снизить уровень тревожности и
+            страха и сдать экзамен без лишних переживаний
+          </li>
+          <li class="aims__element">Беседы по повышению мотивации</li>
+        </ul>
+        <a href="#formats" class="button">Выбрать формат занятий</a>
+      </section>
+      <section class="section section_light exams" id="ege">
+        <h2 class="h2">Курс подготовки к <span class="h2_em">ОГЭ и ЕГЭ</span></h2>
+        <p class="subheading">
+          Курс нацелен конкретно на сдачу ОГЭ / ЕГЭ, нет лишней информации
+        </p>
+        <ul class="aims">
+          <li class="aims__element">
+            Обязательное тестирование перед началом занятий
+          </li>
+          <li class="aims__element">Тщательная проработка структуры экзамена позволяет избежать ступора на экзамене</li>
+          <li class="aims__element">Использование индивидуального плана</li>
+          <li class="aims__element">Регулярные тесты и диагностические работы</li>
+          <li class="aims__element">Использование официальных пособий</li>
+          <li class="aims__element">
+            При занятии в минигруппе регулярные вебинары в формате «вопрос-ответ»
+          </li>
+          <li class="aims__element">
+            Проведение пробных экзаменов позволяет снизить уровень тревожности и страха и сдать экзамен без лишних переживаний
+          </li>
+          <li class="aims__element">
+            Разбор заданий прошлых лет
+          </li>
+          <li class="aims__element">Подробный разбор ошибок</li>
+          <li class="aims__element">Запись занятия в случае пропуска</li>
+        </ul>
+        <a href="#formats" class="button">Выбрать формат занятий</a>
+      </section>
+      <section class="section exams" id="exams">
+        <h2 class="h2">Курс подготовки к <br><span class="h2_em">международным экзаменам</span></h2>
+        <p class="subheading">
+          Сдача Кембриджских экзаменов <br> <span class="strong">B1 Preliminary (PET)</span> <br> <span class="strong">B2 First (FCE)</span> <br> <span class="strong">C1 Advanced (CAE)</span>
+        </p>
+        <ul class="aims">
+          <li class="aims__element">
+            Обязательное тестирование перед началом занятий
+          </li>
+          <li class="aims__element">Тщательная проработка структуры экзамена позволяет избежать ступора на экзамене</li>
+          <li class="aims__element">Использование индивидуального плана</li>
+          <li class="aims__element">Регулярные тесты и диагностические работы</li>
+          <li class="aims__element">Использование официальных пособий</li>
+          <li class="aims__element">
+            При занятии в минигруппе регулярные вебинары в формате «вопрос-ответ»
+          </li>
+          <li class="aims__element">
+            Проведение пробных экзаменов позволяет снизить уровень тревожности и страха и сдать экзамен без лишних переживаний
+          </li>
+          <li class="aims__element">
+            Разбор заданий прошлых лет
+          </li>
+          <li class="aims__element">Подробный разбор ошибок</li>
+          <li class="aims__element">Запись занятия в случае пропуска</li>
+        </ul>
+        <a href="#formats" class="button">Выбрать формат занятий</a>
+      </section>
+      <section class="section section_light" id="formats">
+        <h2 class="h2">Форматы занятий</h2>
+        <p class="subheading">Выберите наиболее удобный формат</p>
+        <div class="formats">
+          <div class="formats__format format">
+            <h3 class="format__h3">Индивидуально</h3>
+            <img class="format__icon" src="./img/094-graduate-1.svg" alt="Graduate">
+            <ul class="format__list">
+              <li class="format__item">
+                Тестирование на определение уровня, постановка цели
+              </li>
+              <li class="format__item">
+                Много разговорной практики - общение на английском языке на
+                занятии и в чатах
+              </li>
+              <li class="format__item">
+                Занятия онлайн – вы не привязаны к определенному месту, можно
+                заниматься из любой точки мира
+              </li>
+              <li class="format__item">
+                Возможность задать вопрос преподавателю вне занятия
+              </li>
+              <li class="format__item">
+                Все пробелы в знаниях под контролем преподавателя
+              </li>
+            </ul>
+            <h4 class="format__h4">Преимущества:</h4>
+            <ul class="format__list">
+              <li class="format__item">
+                Наиболее эффективный курс - все внимание преподавателя
+                направлено на ученика
+              </li>
+              <li class="format__item">Занятия по индивидуальному плану</li>
+              <li class="format__item">Комфортный темп занятий</li>
+              <li class="format__item">
+                Возможность задать вопрос вне занятия
+              </li>
+            </ul>
+            <a href="#contacts" class="button format__button">Записаться</a>
+          </div>
+          <div class="formats__format format">
+            <h3 class="format__h3">В мини-группе (2 человека)</h3>
+            <img class="format__icon" src="./img/096-asking.svg" alt="Asking">
+            <ul class="format__list">
+              <li class="format__item">
+                Тестирование на определение уровня, постановка цели
+              </li>
+              <li class="format__item">
+                Много разговорной практики - общение на английском языке на
+                занятии и в чатах
+              </li>
+              <li class="format__item">
+                Занятия онлайн – вы не привязаны к определенному месту, можно
+                заниматься из любой точки мира
+              </li>
+              <li class="format__item">
+                Возможность задать вопрос преподавателю вне занятия
+              </li>
+              <li class="format__item">
+                Все пробелы в знаниях под контролем преподавателя
+              </li>
+            </ul>
+            <h4 class="format__h4">Преимущества:</h4>
+            <ul class="format__list">
+              <li class="format__item">
+                Распределение в группу, соответствующую уровню знаний
+              </li>
+              <li class="format__item">
+                Разговорная практика между участниками группы, что создает
+                непринужденность общения
+              </li>
+              <li class="format__item">
+                Если занятие пропущено, высылается запись
+              </li>
+              <li class="format__item">
+                Стоимость ниже, чем за индивидуальное занятие
+              </li>
+            </ul>
+            <a href="#contacts" class="button format__button">Записаться</a>
+          </div>
+        </div>
+      </section>
+      <section class="section section_light bonus">
+        <h2 class="h2">Бонус!</h2>
+        <p class="bonus__content">
+          Я регулярно выкладываю советы и идеи для подготовки к экзамену в свой
+          <a class="bonus__link" target="_blank" href="https://www.instagram.com/tatiana_eng_ege/">Instagram</a>. Скорее подписывайтесь!
+        </p>
+        <a class="button button_blue" target="_blank" href="https://www.instagram.com/tatiana_eng_ege/">Посмотреть</a>
+      </section>
+      <section id="reviews" class="reviews section">
+        <h2 class="h2">Что говорят ученики</h2>
+        <div class="glide" id="options-type">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+              <li class="glide__slide">
+                <img
+                  class="glide__image"
+                  src="./img/reviews/review1.JPG"
+                  alt="Review 1"
+                />
+              </li>
+              <li class="glide__slide">
+                <img
+                  class="glide__image"
+                  src="./img/reviews/review2.JPG"
+                  alt="Review 2"
+                />
+              </li>
+              <li class="glide__slide">
+                <img
+                  class="glide__image"
+                  src="./img/reviews/review3.JPG"
+                  alt="Review 3"
+                />
+              </li>
+              <li class="glide__slide">
+                <img
+                  class="glide__image"
+                  src="./img/reviews/review4.JPG"
+                  alt="Review 4"
+                />
+              </li>
+              <li class="glide__slide">
+                <img
+                  class="glide__image"
+                  src="./img/reviews/review5.JPG"
+                  alt="Review 5"
+                />
+              </li>
+              <li class="glide__slide">
+                <img
+                  class="glide__image"
+                  src="./img/reviews/review6.JPG"
+                  alt="Review 6"
+                />
+              </li>
+              <li class="glide__slide">
+                <img
+                  class="glide__image"
+                  src="./img/reviews/review7.JPG"
+                  alt="Review 7"
+                />
+              </li>
+              <li class="glide__slide">
+                <img
+                  class="glide__image"
+                  src="./img/reviews/review8.JPG"
+                  alt="Review 8"
+                />
+              </li>
+              <li class="glide__slide">
+                <img
+                  class="glide__image"
+                  src="./img/reviews/review9.JPG"
+                  alt="Review 9"
+                />
+              </li>
+              <li class="glide__slide">
+                <img
+                  class="glide__image"
+                  src="./img/reviews/review10.JPG"
+                  alt="Review 10"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="glide__arrows slider__controls" data-glide-el="controls">
+            <button
+              class="
+                glide__arrow glide__arrow--left
+                slider__control slider__control_prev
+              "
+              data-glide-dir="<"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="48"
+                height="48"
+                viewBox="0 0 64 64"
+                fill="#0B6EC3"
+                transform="rotate(180)"
+              >
+                <path
+                  d="M28.373 13.546a2 2 0 0 0-2.746 2.908L42.087 32l-16.46 15.546a2 2 0 0 0 2.746 2.908l18-17a2.001 2.001 0 0 0 0-2.908l-18-17z"
+                />
+                <path
+                  d="M32 0C23.453 0 15.417 3.329 9.374 9.373 3.329 15.417 0 23.453 0 32s3.33 16.583 9.374 22.626C15.417 60.671 23.453 64 32 64s16.583-3.329 22.626-9.373C60.671 48.583 64 40.547 64 32s-3.33-16.583-9.374-22.626C48.583 3.329 40.547 0 32 0zm19.797 51.798C46.509 57.087 39.479 60 32 60s-14.509-2.913-19.798-8.202C6.913 46.51 4 39.479 4 32s2.913-14.51 8.203-19.798C17.491 6.913 24.521 4 32 4s14.509 2.913 19.798 8.202C57.087 17.49 60 24.521 60 32s-2.913 14.51-8.203 19.798z"
+                />
+              </svg>
+            </button>
+            <button
+              class="
+                glide__arrow glide__arrow--right
+                slider__control slider__control_next
+              "
+              data-glide-dir=">"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="48"
+                height="48"
+                viewBox="0 0 64 64"
+                fill="#0B6EC3"
+              >
+                <path
+                  d="M28.373 13.546a2 2 0 0 0-2.746 2.908L42.087 32l-16.46 15.546a2 2 0 0 0 2.746 2.908l18-17a2.001 2.001 0 0 0 0-2.908l-18-17z"
+                />
+                <path
+                  d="M32 0C23.453 0 15.417 3.329 9.374 9.373 3.329 15.417 0 23.453 0 32s3.33 16.583 9.374 22.626C15.417 60.671 23.453 64 32 64s16.583-3.329 22.626-9.373C60.671 48.583 64 40.547 64 32s-3.33-16.583-9.374-22.626C48.583 3.329 40.547 0 32 0zm19.797 51.798C46.509 57.087 39.479 60 32 60s-14.509-2.913-19.798-8.202C6.913 46.51 4 39.479 4 32s2.913-14.51 8.203-19.798C17.491 6.913 24.521 4 32 4s14.509 2.913 19.798 8.202C57.087 17.49 60 24.521 60 32s-2.913 14.51-8.203 19.798z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="section section_light advantages">
+        <h2 class="h2">Преимущества занятий со мной</h2>
+        <ol class="advantages__list">
+          <li class="advantages__item">
+            <h3 class="advantages__h3">Экспертный уровень преподавания</h3>
+            <p class="advantages__p">Высокий результат в конце обучения</p>
+          </li>
+          <li class="advantages__item">
+            <h3 class="advantages__h3">Серьезные результаты</h3>
+            <p class="advantages__p">
+              Мои ученики сдают экзамены на высокие баллы, уезжают учиться и
+              работать за границу, переходят на более высокие должности
+            </p>
+          </li>
+          <li class="advantages__item">
+            <h3 class="advantages__h3">Понятная структура занятий</h3>
+            <p class="advantages__p">
+              Создаю индивидуальный план для каждого ученика. Четко
+              придерживаемся цели.
+            </p>
+          </li>
+          <li class="advantages__item">
+            <h3 class="advantages__h3">Максимум пользы</h3>
+            <p class="advantages__p">
+              Каждое занятие имеет высокую ценность, нет «воды», разговоров «за
+              жизнь».
+            </p>
+          </li>
+          <li class="advantages__item">
+            <h3>Комфортная атмосфера</h3>
+            <p>
+              Мотивирую и поддерживаю на всем протяжении обучения. Занятия
+              интересны и увлекательны.
+            </p>
+          </li>
+          <li class="advantages__item">
+            <h3>Большой опыт</h3>
+            <p>
+              Многолетний интерес к психологии позволяет спрогнозировать
+              возможные проблемы и вовремя предотвратить их.
+            </p>
+          </li>
+          <li class="advantages__item">
+            <h3>Погружение в английский</h3>
+            <p>
+              Постепенно перевожу всех учеников на общение на английском во
+              время занятий и переписок в чатах. Уходит страх перед языком;
+              английский язык становится частью повседневной жизни.
+            </p>
+          </li>
+        </ol>
+      </section>
+      <section class="section contacts" id="contacts">
+        <h2 class="h2">Задавайте вопросы и <span class="h2_em">записывайтесь</span></h2>
+        <div class="contacts__container">
+          <div>
+            <p class="desc">Или используйте удобную соцсеть</p>
+            <ul class="contacts__links">
+              <li class="contacts__link">
+                <a href="https://vk.com/tgenina">
+                  <img class="contacts__image" src="./img/social/vk.svg" alt="VK">
+                </a>
+              </li class="contacts__link">
+              <li class="contacts__link">
+                <a href="https://t.me/genina_english">
+                  <img class="contacts__image" src="./img/social/telegram.svg" alt="Telegram">
+                </a>
+              </li>
+              <li class="contacts__link">
+                <a href="https://www.instagram.com/tatiana_eng_ege/">
+                  <img class="contacts__image" src="./img/social/instagram.svg" alt="Instagram">
+                </a>
+              </li>
+              <li class="contacts__link">
+                <a href="https://www.facebook.com/tgenina">
+                  <img class="contacts__image" src="./img/social/facebook.svg" alt="Facebook">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <form class="form" action="">
+            <input
+            id="requestName"
+              type="text"
+              class="form__input"
+              name="name"
+              placeholder="Ваше имя..."
+            />
+            <input
+            id="requestEmail"
+              type="text"
+              class="form__input"
+              name="email"
+              placeholder="Ваша почта для связи..."
+            />
+            <textarea
+            id="requestText"
+              name=""
+              class="form__textarea"
+              cols="30"
+              rows="10"
+              placeholder="Ваш вопрос или какой курс Вы выбрали..."
+            ></textarea>
+            <button class="button button_em" type="submit" onclick="sendEmail();">Отправить</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <ul class="footer__list">
+        <li class="footer__item">
+          <a class="footer__link" href="#about">О преподавателе</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#courses">Курсы</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#reviews">Отзывы</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#contacts">Контакты</a>
+        </li>
+      </ul>
+      <p class="copyright">&#169; 2021 Татьяна Генина</p>
+    </footer>
+  </body>
+  <script>
+    function sendEmail() {
+      let name = document.getElementById('requestName').value;
+      let email = document.getElementById('requestEmail').value;
+      let text = document.getElementById('requestText').value;
+      window.open(`mailto:tasha.genina@mail.ru?subject=Отправлено с сайта tatiana-english.ru&body=${text}.%0d%0aБуду ждать вашего ответа на почту: ${email}`);
+    }
+
+    var glide = new Glide("#options-type", {
+      type: "slider",
+      focusAt: "center",
+      perView: 1,
+    });
+
+    glide.mount();
+
+    var element = document.getElementsByClassName('burger')[0];
+    element.addEventListener('click', function() {
+      element.classList.toggle('burger_open');
+     })
+
+  </script>
+</html>
