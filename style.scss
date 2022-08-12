@@ -105,8 +105,8 @@ ol {
 
 .header {
   display: flex;
-  margin: 0;
-  margin-left: 4rem;
+  margin: 0 auto;
+  justify-content: center;
   @media (max-width: 1200px) {
     flex-direction: column;
     justify-content: center;
@@ -219,6 +219,7 @@ ol {
   .img-container {
     overflow: hidden;
     height: 800px;
+    margin-left: 4rem;
     @media (max-width: 1200px) {
       margin-top: 2rem;
       padding: 2rem;
@@ -273,10 +274,6 @@ ol {
       height: initial;
       display: block;
       margin: 0 auto;
-    }
-    @media (max-width: 1024px) {
-      // width: 300px;
-      // height: 300px;
     }
   }
   &__caption {
@@ -525,9 +522,6 @@ ol {
   &__h3 {
     font-size: 1.4rem;
   }
-  &__p {
-    // width: 30rem;
-  }
   &__list {
     list-style: none;
     counter-reset: big-numbers;
@@ -562,10 +556,6 @@ ol {
 }
 
 .contacts {
-  // @media (max-width: 480px) {
-  //   padding-left: 0;
-  //   padding-right: 0;
-  // }
   &__links {
     padding: 0;
     list-style-type: none;
