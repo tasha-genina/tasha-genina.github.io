@@ -460,6 +460,14 @@ ol {
     margin: 0;
   }
 }
+.header__container {
+  margin-left: 2rem;
+}
+@media (max-width: 1200px) {
+  .header__container {
+    margin-left: 0;
+  }
+}
 .header .burger {
   display: none;
   position: absolute;
