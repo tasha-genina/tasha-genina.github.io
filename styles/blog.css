@@ -417,6 +417,9 @@ body {
   display: flex;
   justify-content: center;
 }
+.container .blog {
+  margin-bottom: 2rem;
+}
 .container .header {
   display: flex;
   justify-content: space-between;
