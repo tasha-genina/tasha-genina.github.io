@@ -474,6 +474,14 @@ h1 {
   margin: 0;
 }
 
+.item {
+  counter-increment: my-awesome-counter;
+}
+.item::before {
+  content: counter(my-awesome-counter) ". ";
+  font-size: 1.2rem;
+  font-weight: bold;
+}
 .item__heading {
   font-size: 1.2rem;
   margin-bottom: 0;
@@ -483,20 +491,10 @@ h1 {
   text-align: justify;
 }
 
-ol {
+.ol {
   padding: 0;
   list-style: none;
   counter-reset: my-awesome-counter;
-}
-
-ol li {
-  counter-increment: my-awesome-counter;
-}
-
-ol li::before {
-  content: counter(my-awesome-counter) ". ";
-  font-size: 1.2rem;
-  font-weight: bold;
 }
 
 .last {
@@ -513,4 +511,8 @@ ol li::before {
 
 .add-tick:before {
   content: "✅";
+}
+
+.justify {
+  text-align: justify;
 }/*# sourceMappingURL=post.css.map */

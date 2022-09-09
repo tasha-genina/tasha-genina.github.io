@@ -59,6 +59,12 @@ h1 {
 }
 
 .item {
+  counter-increment: my-awesome-counter;
+  &::before {
+    content: counter(my-awesome-counter) ". ";
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
   &__heading {
     font-size: 1.2rem;
     margin-bottom: 0;
@@ -70,19 +76,10 @@ h1 {
   }
 }
 
-ol {
+.ol {
   padding: 0;
   list-style: none;
   counter-reset: my-awesome-counter;
-}
-ol li {
-  counter-increment: my-awesome-counter;
-}
-ol li::before {
-  content: counter(my-awesome-counter) ". ";
-  // color: $emColor;
-  font-size: 1.2rem;
-  font-weight: bold;
 }
 
 .last {
@@ -101,4 +98,8 @@ ol li::before {
   &:before {
     content: "✅";
   }
+}
+
+.justify {
+  text-align: justify;
 }
