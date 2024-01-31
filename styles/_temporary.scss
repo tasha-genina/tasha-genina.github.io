@@ -1,21 +1,16 @@
 .temp-container {
   background-color: white;
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: center;
-  // margin: 0 auto;
 }
 
 .temporary {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   .webinar-img {
     width: 20rem;
-    margin-right: 2rem;
   }
 
   .time {
@@ -52,13 +47,14 @@
   }
 
   .heading {
-    font-size: 2.4rem;
-    color: $mainColor;
+    font-size: 2.6rem;
+    font-weight: bold;
+    color: $emDarkColor;
     text-transform: uppercase;
   }
 
   .name {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: $mainColor;
   }
 
@@ -83,18 +79,20 @@
   .free {
     font-size: 1.4rem;
     font-weight: bold;
-    color: rgb(194, 63, 63);
+    color: $red;
   }
 
   .button {
     display: block;
+    margin: 1rem auto;
   }
 
-  .author {
-    font-style: italic;
-  }
+  .webinar__left {
+    width: 800px;
 
-  .meta {
-    color: $mainColor;
+    @media (max-width: 768px) {
+      width: 100%;
+      margin: 0 auto;
+    }
   }
 }

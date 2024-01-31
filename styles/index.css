@@ -1,4 +1,5 @@
-@import url("../fonts/stylesheet.css"); /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+@import url("../fonts/stylesheet.css");
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
 /**
@@ -319,6 +320,26 @@ body {
 
 .strong {
   font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.red {
+  color: #c00000;
+}
+
+.emDarkColor {
+  color: #001370;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-left {
+  text-align: left;
 }
 
 .subheading {
@@ -727,10 +748,36 @@ ol {
   transform: translateY(10px);
 }
 
-.webinar-container {
+.webinar__container {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
+  gap: 20px;
+}
+@media (max-width: 1024px) {
+  .webinar__container {
+    width: 100%;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.webinar__iframe {
+  width: 500px;
+  height: 300px;
+}
+@media (max-width: 1024px) {
+  .webinar__iframe {
+    width: calc(100% - 2rem);
+    height: 300px;
+  }
+}
+.webinar__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .performance,
@@ -749,15 +796,15 @@ ol {
 }
 @media (max-width: 768px) {
   .performance .aims,
-.oge .aims,
-.exams .aims {
+  .oge .aims,
+  .exams .aims {
     width: 80%;
   }
 }
 @media (max-width: 480px) {
   .performance .aims,
-.oge .aims,
-.exams .aims {
+  .oge .aims,
+  .exams .aims {
     width: 100%;
   }
 }
@@ -923,6 +970,11 @@ ol {
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 1024px) {
+  .advantages__list {
+    margin: auto 8rem;
+  }
+}
 .advantages__item {
   counter-increment: big-numbers;
   width: 50%;
@@ -954,22 +1006,38 @@ ol {
 }
 
 .contacts__links {
-  padding: 0;
-  list-style-type: none;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
+  height: 100px;
+  margin: 5rem auto;
 }
 @media (max-width: 768px) {
   .contacts__links {
-    justify-content: center;
+    flex-direction: column;
+    height: 100%;
   }
 }
+.contacts__block {
+  margin: auto 2rem;
+}
 .contacts__link {
-  margin: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #0b6ec3;
+}
+.contacts__link {
+  font-size: 1.2rem;
 }
 .contacts__image {
-  width: 44px;
-  height: 44px;
+  width: 64px;
+  height: 64px;
+}
+.contacts__desc {
+  font-size: 1.2rem;
+  text-align: center;
 }
 .contacts__container {
   display: flex;
@@ -980,9 +1048,6 @@ ol {
     flex-direction: column;
     align-items: center;
   }
-}
-.contacts__container .desc {
-  font-size: 1.2rem;
 }
 .contacts__container .form {
   display: flex;
@@ -1004,9 +1069,6 @@ ol {
 .contacts__container .form__input::-moz-placeholder, .contacts__container .form__textarea::-moz-placeholder {
   color: rgba(11, 109, 195, 0.6431372549);
 }
-.contacts__container .form__input:-ms-input-placeholder, .contacts__container .form__textarea:-ms-input-placeholder {
-  color: rgba(11, 109, 195, 0.6431372549);
-}
 .contacts__container .form__input::placeholder, .contacts__container .form__textarea::placeholder {
   color: rgba(11, 109, 195, 0.6431372549);
 }
@@ -1022,15 +1084,14 @@ ol {
 }
 
 .temporary {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .temporary .webinar-img {
   width: 20rem;
-  margin-right: 2rem;
 }
 .temporary .time {
   font-size: 1.6rem;
@@ -1065,12 +1126,13 @@ ol {
   }
 }
 .temporary .heading {
-  font-size: 2.4rem;
-  color: #0b6ec3;
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: #001370;
   text-transform: uppercase;
 }
 .temporary .name {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #0b6ec3;
 }
 .temporary .facts {
@@ -1097,14 +1159,18 @@ ol {
 .temporary .free {
   font-size: 1.4rem;
   font-weight: bold;
-  color: rgb(194, 63, 63);
+  color: #c00000;
 }
 .temporary .button {
   display: block;
+  margin: 1rem auto;
 }
-.temporary .author {
-  font-style: italic;
+.temporary .webinar__left {
+  width: 800px;
 }
-.temporary .meta {
-  color: #0b6ec3;
+@media (max-width: 768px) {
+  .temporary .webinar__left {
+    width: 100%;
+    margin: 0 auto;
+  }
 }/*# sourceMappingURL=index.css.map */

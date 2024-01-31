@@ -6,7 +6,9 @@ $lightBgColor: #fbfcfe;
 $mainColor: #0b6ec3;
 $emColor: #ffb22e;
 $emColorLight: #ffbb46;
+$emDarkColor: #001370;
 $h: "Arial", sans-serif;
+$red: #c00000;
 
 body {
   margin: 0;
@@ -17,6 +19,26 @@ body {
 
 .strong {
   font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.red {
+  color: $red;
+}
+
+.emDarkColor {
+  color: $emDarkColor;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-left {
+  text-align: left;
 }
 
 .subheading {
