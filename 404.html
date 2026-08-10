@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Страница не найдена — Татьяна Генина</title>
+    <!-- Root-absolute paths throughout: this page is served for any missing
+         URL, including nested ones, where relative paths would not resolve. -->
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
+    <meta name="theme-color" content="#1E40AF" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/base.css" />
+    <style>
+      .nf {
+        max-width: 640px;
+        margin: 0 auto;
+        text-align: center;
+        padding: var(--sp-9) var(--sp-5);
+      }
+      .nf__code {
+        font-family: var(--font-head);
+        font-weight: 800;
+        font-size: clamp(4rem, 3rem + 6vw, 7rem);
+        line-height: 1;
+        color: var(--blue-600);
+        letter-spacing: -0.03em;
+      }
+      .nf h1 {
+        font-size: var(--fs-h3);
+        margin-top: var(--sp-4);
+      }
+      .nf p {
+        margin-top: var(--sp-3);
+        color: var(--gray-600);
+      }
+      .nf__links {
+        margin-top: var(--sp-6);
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--sp-3);
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="section s-plain">
+      <div class="nf">
+        <div class="nf__code">404</div>
+        <h1>Такой страницы нет</h1>
+        <p>
+          Возможно, ссылка устарела или в адресе опечатка. Актуальная информация
+          о подготовке к ЕГЭ и ОГЭ — на главной странице.
+        </p>
+        <div class="nf__links">
+          <a class="btn btn--cta" href="/">На главную</a>
+          <a class="btn btn--ghost" href="/#faq">Частые вопросы</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) {
+          if (document.scripts[j].src === r) {
+            return;
+          }
+        }
+        ((k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a));
+      })(
+        window,
+        document,
+        "script",
+        "https://mc.yandex.ru/metrika/tag.js?id=111444356",
+        "ym",
+      );
+      ym(111444356, "init", {
+        ssr: true,
+        webvisor: true,
+        clickmap: true,
+        ecommerce: "dataLayer",
+        referrer: document.referrer,
+        url: location.href,
+        accurateTrackBounce: true,
+        trackLinks: true,
+      });
+    </script>
+    <noscript
+      ><div>
+        <img
+          src="https://mc.yandex.ru/watch/111444356"
+          style="position: absolute; left: -9999px"
+          alt=""
+        /></div
+    ></noscript>
+    <!-- /Yandex.Metrika counter -->
+  </body>
+</html>
