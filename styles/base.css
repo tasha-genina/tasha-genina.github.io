@@ -1,0 +1,820 @@
+/* ============================================================
+   BASE — design system
+   Tokens, reset, typography, buttons, nav, footer.
+   Rules that matter:
+     · amber is CTA-only. Never decorative.
+     · three section tones: plain / tint / accent. Accent twice max.
+     · one icon system: inline Lucide, stroke: currentColor.
+   ============================================================ */
+
+:root {
+  /* ── Blues: structure, hierarchy, everything non-CTA ── */
+  --blue-50: #eff6ff;
+  --blue-100: #dbeafe;
+  --blue-200: #bfdbfe;
+  --blue-300: #93c5fd;
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  --blue-800: #1e40af;
+  --blue-950: #131f45;
+
+  /* ── Amber: CTA ONLY ── */
+  --amber-500: #f59e0b;
+  --amber-600: #d97706;
+
+  /* ── Neutrals ── */
+  --white: #ffffff;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-900: #111827;
+
+  --font-head: "Nunito", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  /* ── Type scale ── */
+  --fs-xs: 0.8125rem;
+  --fs-sm: 1rem;
+  --fs-base: 1.0625rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.25rem;
+  --fs-h3: 1.4rem;
+  --fs-h2: clamp(1.75rem, 1.2rem + 2.2vw, 2.5rem);
+  --fs-h1: clamp(2.05rem, 1.2rem + 3.6vw, 3.35rem);
+  --fs-num: clamp(2.25rem, 1.4rem + 3vw, 3.25rem);
+
+  /* ── Space scale ── */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 2.5rem;
+  --sp-8: 3rem;
+  --sp-9: 4rem;
+  --sp-10: 5rem;
+
+  --section-y: clamp(2.5rem, 1.2rem + 5vw, 6rem);
+  --gutter: clamp(1.25rem, 0.75rem + 2vw, 2rem);
+  --maxw: 1140px;
+
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-full: 999px;
+
+  --sh-sm: 0 1px 3px rgba(16, 32, 72, 0.06), 0 4px 16px rgba(16, 32, 72, 0.05);
+  --sh-md:
+    0 4px 12px rgba(16, 32, 72, 0.07), 0 12px 36px rgba(16, 32, 72, 0.07);
+  --sh-lg: 0 8px 24px rgba(16, 32, 72, 0.1), 0 24px 64px rgba(16, 32, 72, 0.1);
+
+  --t: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Reset ─────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: 1.65;
+  color: var(--gray-700);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  /* Unbreakable strings — t.me/tgenina, an email, a long Russian compound —
+     otherwise push the layout past a 320px screen. */
+  overflow-wrap: break-word;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/* width/height attrs reserve layout space; without this the attribute
+   height is used literally and any CSS-sized image gets stretched. */
+img {
+  height: auto;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+:focus-visible {
+  outline: 3px solid var(--blue-400);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Icons: one system ─────────────────────────────────── */
+.ico {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ico--sm {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+}
+.ico--lg {
+  width: 28px;
+  height: 28px;
+  stroke-width: 1.6;
+}
+
+/* ── Layout ────────────────────────────────────────────── */
+.section {
+  padding: var(--section-y) var(--gutter);
+}
+/* Anchored headings must clear everything stuck to the top — the nav plus the
+   amber strip, which is two lines tall on a phone. --sticky-top is measured at
+   runtime; the fallback covers the nav alone, in case the script never runs. */
+[id] {
+  scroll-margin-top: var(--sticky-top, 84px);
+}
+.wrap {
+  max-width: var(--maxw);
+  margin-inline: auto;
+}
+.wrap--narrow {
+  max-width: 780px;
+  margin-inline: auto;
+}
+
+/* Section tones — the only three backgrounds on the page */
+.s-plain {
+  background: var(--white);
+}
+.s-tint {
+  background: var(--blue-50);
+}
+.s-accent {
+  background: linear-gradient(160deg, var(--blue-800) 0%, var(--blue-950) 100%);
+  color: #e4ecff;
+}
+
+/* ── Typography ────────────────────────────────────────── */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-head);
+  color: var(--gray-900);
+  line-height: 1.18;
+  font-weight: 800;
+}
+.s-accent h1,
+.s-accent h2,
+.s-accent h3 {
+  color: var(--white);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--blue-600);
+  background: var(--blue-100);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--r-full);
+  margin-bottom: var(--sp-4);
+}
+.s-accent .eyebrow {
+  color: var(--blue-100);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.h2 {
+  font-size: var(--fs-h2);
+  letter-spacing: -0.02em;
+}
+.h3 {
+  font-size: var(--fs-h3);
+  font-weight: 700;
+}
+
+.lede {
+  font-size: var(--fs-md);
+  color: var(--gray-500);
+  max-width: 62ch;
+  margin-top: var(--sp-3);
+}
+.s-accent .lede {
+  color: #b9cbf5;
+}
+
+.center {
+  text-align: center;
+}
+.center .lede {
+  margin-inline: auto;
+}
+.section-head {
+  margin-bottom: var(--sp-8);
+}
+
+/* ── Mobile card rails ─────────────────────────────────────
+   Peer items (cases, reviews, formats) become a swipeable rail
+   below 780px. Stacking them costs ~2,700px of scroll for
+   content the reader takes in one card at a time anyway.
+   NB: the default `.rail-hint { display: none }` must come
+   BEFORE the media query, or it wins on source order. */
+.rail-hint {
+  display: none;
+}
+.s-accent .rail-hint {
+  color: #a8bef0;
+}
+
+@media (max-width: 780px) {
+  .rail {
+    display: flex !important;
+    grid-template-columns: none !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin-inline: calc(var(--gutter) * -1);
+    padding-inline: var(--gutter);
+    padding-bottom: var(--sp-2);
+  }
+  .rail::-webkit-scrollbar {
+    display: none;
+  }
+  .rail > * {
+    flex: 0 0 min(84%, 330px);
+    scroll-snap-align: start;
+  }
+  .rail-hint {
+    display: block;
+    margin-top: var(--sp-3);
+    font-size: var(--fs-xs);
+    /* Arrows alone, so they need room to read as a gesture cue
+       rather than as two stray glyphs. */
+    letter-spacing: 0.6em;
+    text-indent: 0.6em;
+    color: var(--gray-500);
+    text-align: center;
+  }
+  /* Set from JS: on a wide phone the cards can all fit, and a swipe hint
+     pointing at nothing is worse than no hint. */
+  .rail-hint[data-needed="false"] {
+    display: none;
+  }
+  .section-head {
+    margin-bottom: var(--sp-6);
+  }
+}
+
+/* ── Buttons ───────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  line-height: 1.2;
+  padding: 0.95rem 1.75rem;
+  min-height: 48px;
+  border-radius: var(--r-full);
+  border: 2px solid transparent;
+  transition:
+    background var(--t),
+    border-color var(--t),
+    transform var(--t),
+    box-shadow var(--t);
+  text-align: center;
+}
+
+/* The only amber on the page. */
+.btn--cta {
+  background: var(--amber-500);
+  border-color: var(--amber-500);
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.28);
+}
+.btn--cta:hover {
+  background: var(--amber-600);
+  border-color: var(--amber-600);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.36);
+}
+
+.btn--ghost {
+  color: var(--blue-700);
+  border-color: var(--blue-200);
+  background: var(--white);
+}
+.btn--ghost:hover {
+  border-color: var(--blue-400);
+  background: var(--blue-50);
+  transform: translateY(-2px);
+}
+
+.btn--light {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--blue-800);
+}
+.btn--light:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sh-md);
+}
+
+.btn--wide {
+  width: 100%;
+}
+
+/* ── Nav ───────────────────────────────────────────────── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--gray-200);
+}
+.nav__inner {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding: 0 var(--gutter);
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-6);
+}
+.nav__logo {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--blue-700);
+  white-space: nowrap;
+}
+.nav__logo em {
+  font-style: normal;
+  color: var(--amber-500);
+}
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-6);
+}
+.nav__link {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--gray-600);
+  transition: color var(--t);
+}
+.nav__link:hover {
+  color: var(--blue-700);
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  margin-right: -10px;
+}
+.burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--gray-700);
+  border-radius: 2px;
+  transition:
+    transform var(--t),
+    opacity var(--t);
+}
+.burger[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.burger[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.burger[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 860px) {
+  .burger {
+    display: flex;
+  }
+  .nav__links {
+    position: fixed;
+    inset: 68px 0 auto 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--white);
+    padding: var(--sp-2) var(--gutter) var(--sp-5);
+    border-bottom: 1px solid var(--gray-200);
+    box-shadow: var(--sh-md);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition:
+      opacity var(--t),
+      transform var(--t);
+  }
+  .nav__links[data-open="true"] {
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+  }
+  .nav__link {
+    padding: var(--sp-4) 0;
+    border-bottom: 1px solid var(--gray-100);
+    font-size: var(--fs-md);
+  }
+  .nav__cta {
+    margin-top: var(--sp-4);
+  }
+  .nav__cta .btn {
+    width: 100%;
+  }
+}
+
+/* ── Sticky announcement strip ─────────────────────────────
+   Sits under the nav and stays there. Deliberately flat and
+   full-bleed so it reads as a banner, not as a button — amber
+   otherwise means "click here" everywhere else on the page. */
+.notice {
+  position: sticky;
+  top: 69px;              /* nav is 68px + 1px border */
+  z-index: 199;
+  background: var(--amber-500);
+  padding: 0.45rem var(--gutter);
+}
+.notice__text {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-xs);
+  font-weight: 600;            /* white on amber is low-contrast — weight helps a little */
+  line-height: 1.4;
+  color: var(--white);
+  text-align: center;
+}
+.notice__text .ico { color: rgba(255, 255, 255, 0.85); }
+
+@media (max-width: 560px) {
+  .notice { padding: 0.4rem var(--gutter); }
+  .notice__text { font-size: 11px; gap: var(--sp-1); }
+  .notice__text .ico { display: none; }
+}
+
+/* ── Sticky mobile CTA ─────────────────────────────────── */
+.sticky-cta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 190;
+  display: none;
+  padding: var(--sp-3) var(--gutter);
+  padding-bottom: calc(var(--sp-3) + env(safe-area-inset-bottom));
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid var(--gray-200);
+  transform: translateY(110%);
+  transition: transform 0.28s ease;
+}
+.sticky-cta[data-show="true"] {
+  transform: none;
+}
+@media (max-width: 860px) {
+  .sticky-cta {
+    display: block;
+  }
+  body {
+    padding-bottom: 84px;
+  }
+}
+
+/* ── Footer ────────────────────────────────────────────── */
+.footer {
+  background: var(--blue-50);
+  border-top: 1px solid var(--blue-100);
+  padding: var(--sp-9) var(--gutter) var(--sp-6);
+}
+.footer__inner {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1.2fr;
+  gap: var(--sp-8);
+  padding-bottom: var(--sp-7);
+  border-bottom: 1px solid var(--blue-200);
+}
+.footer__logo {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--blue-700);
+}
+.footer__logo em {
+  font-style: normal;
+  color: var(--amber-500);
+}
+.footer__tagline {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-sm);
+  color: var(--gray-500);
+  max-width: 30ch;
+}
+.footer__legal {
+  margin-top: var(--sp-4);
+  font-size: var(--fs-xs);
+  color: var(--gray-400);
+}
+.footer__title {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--blue-500);
+  margin-bottom: var(--sp-4);
+}
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.footer__list a,
+.footer__soc {
+  font-size: var(--fs-sm);
+  color: var(--gray-600);
+  transition: color var(--t);
+}
+.footer__list a:hover,
+.footer__soc:hover {
+  color: var(--blue-700);
+}
+.footer__soc {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-3);
+}
+.footer__soc .soc-ico {
+  width: 20px;
+  height: 20px;
+  color: var(--blue-500);
+  transition: color var(--t);
+}
+.footer__soc:hover .soc-ico {
+  color: var(--blue-700);
+}
+.footer__bottom {
+  max-width: var(--maxw);
+  margin: var(--sp-5) auto 0;
+  font-size: var(--fs-xs);
+  color: var(--gray-400);
+  text-align: center;
+}
+
+@media (max-width: 780px) {
+  .footer__inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+  }
+}
+
+/* Tap targets, keyed to the input device rather than the width —
+   a 1024px iPad is still a thumb, and these links sit at 20–26px
+   tall by default, well under the ~44px a finger needs. */
+@media (pointer: coarse) {
+  .footer__list {
+    gap: 0;
+  }
+  .footer__list a {
+    display: block;
+    padding: var(--sp-3) 0;
+  }
+  .footer__soc {
+    padding: var(--sp-2) 0;
+    margin-bottom: var(--sp-1);
+  }
+  .footer__policy {
+    padding-block: var(--sp-2);
+  }
+}
+/* Above 860 the nav bar is horizontal, so its links need the padding
+   too — but only there: inside the burger menu they already carry it. */
+@media (pointer: coarse) and (min-width: 861px) {
+  .nav__link {
+    padding-block: var(--sp-2);
+  }
+}
+
+/* ── Motion ────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
+}
+.reveal[data-seen="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ── Cookie notice ─────────────────────────────────────────
+   Informational, not a consent gate. One line, dismissed for good.
+   Sits below the sticky CTA so it never covers the primary action. */
+.cookie {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 195;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--sp-3) var(--sp-4);
+  padding: var(--sp-3) var(--gutter);
+  padding-bottom: calc(var(--sp-3) + env(safe-area-inset-bottom));
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--gray-200);
+}
+.cookie[hidden] {
+  display: none;
+}
+.cookie__text {
+  font-size: var(--fs-xs);
+  color: var(--gray-500);
+  text-align: center;
+}
+.cookie__text a {
+  color: var(--blue-700);
+  border-bottom: 1px solid var(--blue-200);
+}
+.cookie__ok {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  color: var(--blue-700);
+  background: var(--blue-50);
+  border: 1px solid var(--blue-200);
+  border-radius: var(--r-full);
+  padding: 0.45rem 1.2rem;
+  min-height: 40px;
+}
+.cookie__ok:hover {
+  background: var(--blue-100);
+}
+
+/* Below the desktop grid the bar has to stay a single row. Left to
+   wrap, the button drops to its own line and the bar doubles to
+   ~120px of a phone screen — for a notice nobody came here to read. */
+@media (max-width: 780px) {
+  .cookie {
+    flex-wrap: nowrap;
+    gap: var(--sp-3);
+    padding-top: var(--sp-2);
+    padding-bottom: calc(var(--sp-2) + env(safe-area-inset-bottom));
+  }
+  .cookie__text {
+    font-size: 12px;
+    line-height: 1.45;
+    text-align: left;
+    flex: 1;
+    min-width: 0;
+  }
+  .cookie__ok {
+    flex: none;
+    padding: 0.35rem 1rem;
+    min-height: 40px;
+  }
+}
+
+/* Keep the sticky CTA clear of the notice. The bar's height depends on how the
+   text wraps, so it's measured at runtime into --cookie-h rather than guessed. */
+@media (max-width: 860px) {
+  body[data-cookie="visible"] .sticky-cta {
+    bottom: var(--cookie-h, 0px);
+  }
+  body[data-cookie="visible"] {
+    padding-bottom: calc(84px + var(--cookie-h, 0px));
+  }
+}
+
+.footer__policy {
+  display: inline-block;
+  margin-top: var(--sp-3);
+  font-size: var(--fs-xs);
+  color: var(--gray-500);
+  border-bottom: 1px solid var(--gray-300);
+}
+.footer__policy:hover {
+  color: var(--blue-700);
+}
+
+/* ── Short viewports (phone in landscape) ──────────────────
+   At 375px tall the nav, the amber strip, the sticky CTA and the
+   cookie bar together claimed 256px — 68% of the screen — leaving
+   about four lines of the actual page visible. Everything sticky
+   gets compressed, and the strip stops following the scroll: it
+   still greets people at the top, it just isn't worth a permanent
+   seventh of a landscape screen. */
+@media (max-height: 500px) and (orientation: landscape) {
+  .nav__inner {
+    height: 52px;
+  }
+  .nav__links {
+    inset-block-start: 52px;
+    max-height: calc(100vh - 52px);
+    overflow-y: auto;
+  }
+  .notice {
+    position: static;
+  }
+  .notice__text {
+    font-size: 12px;
+  }
+  .sticky-cta {
+    padding-top: var(--sp-2);
+    padding-bottom: calc(var(--sp-2) + env(safe-area-inset-bottom));
+  }
+  .sticky-cta .btn {
+    padding-block: 0.55rem;
+  }
+  body {
+    padding-bottom: 68px;
+  }
+}

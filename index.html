@@ -1,669 +1,1867 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tatiana English | Подготовка к экзаменам</title>
-    <link rel="stylesheet" href="styles/index.css" />
-    <link rel="icon" type="image/png" href="./img/favicon.png" />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js"
-      integrity="sha512-IkLiryZhI6G4pnA3bBZzYCT9Ewk87U4DGEOz+TnRD3MrKqaUitt+ssHgn2X/sxoM7FxCP/ROUp6wcxjH/GcI5Q=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.min.css"
-      integrity="sha512-YQlbvfX5C6Ym6fTUSZ9GZpyB3F92hmQAZTO5YjciedwAaGRI9ccNs4iw2QTCJiSPheUQZomZKHQtuwbHkA9lgw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Татьяна Генина — подготовка к ЕГЭ и ОГЭ по английскому языку</title>
+    <meta
+      name="description"
+      content="Индивидуальная онлайн-подготовка к ЕГЭ и ОГЭ по английскому. Эксперт по проверке экзаменационных работ, сертификат CELTA, 25+ лет преподавания. Бесплатная диагностика — 30 минут."
     />
+    <meta name="theme-color" content="#1E40AF" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta
+      property="og:title"
+      content="Подготовка к ЕГЭ и ОГЭ по английскому — Татьяна Генина"
+    />
+    <meta
+      property="og:description"
+      content="Эксперт по проверке экзаменационных работ ЕГЭ, сертификат CELTA, 25+ лет преподавания. Бесплатная диагностика — 30 минут."
+    />
+    <meta property="og:image" content="./img/tatiana-hero.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href="./img/favicon.png" />
+    <link rel="apple-touch-icon" href="./img/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/home.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="header__container">
-        <nav class="nav">
-          <div class="burger">
-            <span></span>
-            <span></span>
-            <span></span>
+    <!-- ═══ S1 · Nav ═══════════════════════════════════════════ -->
+    <nav class="nav">
+      <div class="nav__inner">
+        <a href="#top" class="nav__logo">Татьяна <em>English</em></a>
+        <button
+          class="burger"
+          id="burger"
+          aria-label="Меню"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav__links" id="nav-links">
+          <a href="#results" class="nav__link">Результаты</a>
+          <a href="#process" class="nav__link">Как проходит</a>
+          <a href="#about" class="nav__link">О преподавателе</a>
+          <a href="#reviews" class="nav__link">Отзывы</a>
+          <div class="nav__cta">
+            <a href="#contact" class="btn btn--cta" data-cta="nav"
+              >Бесплатная диагностика</a
+            >
           </div>
-          <ul class="menu">
-            <li class="menu__item">
-              <a href="#about" class="menu__link">О преподавателе</a>
-            </li>
-            <li class="menu__item">
-              <a href="#courses" class="menu__link">Курсы</a>
-            </li>
-            <li class="menu__item">
-              <a href="#reviews" class="menu__link">Отзывы</a>
-            </li>
-            <li class="menu__item">
-              <a href="#contacts" class="menu__link">Контакты</a>
-            </li>
-            <li class="menu__item">
-              <a href="./blog.html" class="menu__link">Блог</a>
-            </li>
-          </ul>
-        </nav>
-        <h1 class="h1">
-          Подготовка <br />к <span class="h1_em">ОГЭ</span> и
-          <span class="h1_em">ЕГЭ</span><br />на высокий балл!
-        </h1>
-        <a href="#courses" class="button button_link">Вперед за знаниями</a>
+        </div>
       </div>
-      <div class="img-container">
-        <img src="./img/Intro photo.png" alt="Intro photo" />
+    </nav>
+
+    <!-- MOCK: only keep this if the intake limit is genuinely true -->
+    <div class="notice">
+      <p class="notice__text">
+        <svg class="ico ico--sm" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 6v6l4 2" />
+        </svg>
+        Основной набор на учебный год идёт в августе — к сентябрю свободных мест
+        обычно не остаётся.
+      </p>
+    </div>
+    <!-- /MOCK -->
+    <!-- ═══ S2 · Hero ══════════════════════════════════════════ -->
+    <header class="hero" id="top">
+      <div class="hero__inner">
+        <div class="hero__content">
+          <span class="hero__tag">
+            <svg class="ico ico--sm" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"
+              />
+              <path d="M22 10v6" />
+              <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+            </svg>
+            Онлайн-подготовка к экзаменам
+          </span>
+
+          <h1 class="hero__title">
+            ЕГЭ и ОГЭ по&nbsp;английскому <b>с&nbsp;экспертом</b>
+          </h1>
+
+          <p class="hero__sub">
+            Аттестованный эксперт ЕГЭ и ОГЭ: знаю критерии изнутри и вижу, где
+            именно теряются баллы. Составляю план подготовки до самого экзамена
+            — и родители всегда в курсе, как идут дела.
+          </p>
+
+          <p class="hero__proof">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M16 7h6v6" />
+              <path d="m22 7-8.5 8.5-5-5L2 17" />
+            </svg>
+            <span>Наиболее частый результат учеников: <b>90+</b></span>
+          </p>
+
+          <div class="hero__actions">
+            <a href="#contact" class="btn btn--cta" data-cta="hero"
+              >Записаться на бесплатную диагностику</a
+            >
+            <a href="#about" class="btn btn--ghost">Об&nbsp;учителе</a>
+          </div>
+          <p class="hero__micro">Бесплатно, 30 минут, онлайн.</p>
+        </div>
+
+        <div class="hero__figure">
+          <img
+            class="hero__photo"
+            src="./img/tatiana-hero.jpg"
+            width="800"
+            height="1139"
+            fetchpriority="high"
+            alt="Татьяна Михайловна Генина — преподаватель английского языка"
+          />
+        </div>
       </div>
     </header>
-    <main>
-      <section class="section section_light">
-        <div class="highlights">
-          <div class="highlights__element">
-            <img class="highlights__icon" src="./img/019-exam.svg" alt="Exam" />
-            <h3 class="highlights__heading">Высокий балл на экзаменах</h3>
-            <p class="highlights__content">
-              Мои ученики стабильно набирают высокие баллы на экзаменах. Больше,
-              чем в среднем по стране.
+
+    <!-- ═══ S3 · Credibility strip ═════════════════════════════ -->
+    <section class="strip">
+      <div class="strip__inner">
+        <span class="strip__item">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"
+            />
+            <path d="m9 12 2 2 4-4" />
+          </svg>
+          Эксперт по проверке ЕГЭ и ОГЭ
+        </span>
+        <span class="strip__item">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"
+            />
+            <circle cx="12" cy="8" r="6" />
+          </svg>
+          Сертификат CELTA
+        </span>
+        <span class="strip__item">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 6v6l4 2" />
+          </svg>
+          25+ лет преподавания
+        </span>
+        <span class="strip__break"></span>
+        <span class="strip__item">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"
+            />
+            <path d="M11 12 5.12 2.2" />
+            <path d="m13 12 5.88-9.8" />
+            <path d="M8 7h8" />
+            <circle cx="12" cy="17" r="5" />
+          </svg>
+          Член жюри Всероссийской олимпиады
+        </span>
+        <span class="strip__item">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M10 18v-7" />
+            <path
+              d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"
+            />
+            <path d="M14 18v-7" />
+            <path d="M18 18v-7" />
+            <path d="M3 22h18" />
+            <path d="M6 18v-7" />
+          </svg>
+          Преподаватель лингвистического вуза
+        </span>
+      </div>
+    </section>
+
+    <!-- ═══ S4 · Results — the visual peak ═════════════════════ -->
+    <section class="section s-accent" id="results">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Результаты</span>
+          <h2 class="h2">Результаты подготовки к ЕГЭ</h2>
+          <p class="lede">
+            Цифры по выпускникам, которых я готовила к ЕГЭ по английскому с 2010
+            года.
+          </p>
+        </div>
+
+        <div class="stats stats--six reveal">
+          <div class="stat">
+            <p class="stat__n">81</p>
+            <p class="stat__l">
+              минимальный балл у тех, кто занимался год и дольше
             </p>
           </div>
-          <div class="highlights__element">
-            <img
-              class="highlights__icon"
-              src="./img/035-school.svg"
-              alt="School"
-            />
-            <h3 class="highlights__heading">Поступление в вузы</h3>
-            <p class="highlights__content">
-              Ученики поступают в лучшие вузы страны: МГУ, ВШЭ, МГИМО и др.
-            </p>
+          <div class="stat stat--lead">
+            <p class="stat__n">90+</p>
+            <p class="stat__l">наиболее частый результат учеников</p>
           </div>
-          <div class="highlights__element">
-            <img
-              class="highlights__icon"
-              src="./img/090-studying.svg"
-              alt="Studying"
-            />
-            <h3 class="highlights__heading">Более 25 лет преподавания</h3>
-            <p class="highlights__content">
-              Сотни успешных учеников за десятилетия преподавания.
-              Присоединяйтесь!
-            </p>
+          <div class="stat">
+            <p class="stat__n">95<span>%</span></p>
+            <p class="stat__l">поступили в выбранный вуз</p>
           </div>
-          <div class="highlights__element">
-            <img
-              class="highlights__icon"
-              src="./img/093-gold-medal.svg"
-              alt="Gold medal"
-            />
-            <h3 class="highlights__heading">
-              Уникальная методика преподавания
-            </h3>
-            <p class="highlights__content">
-              За многие годы выработана методика, позволяющая с максимальной
-              эффективностью достигать поставленных целей.
-            </p>
+          <div class="stat">
+            <p class="stat__n">83<span>%</span></p>
+            <p class="stat__l">сдали на 80+ баллов</p>
           </div>
-          <div class="highlights__element">
-            <img
-              class="highlights__icon"
-              src="./img/074-dictionary.svg"
-              alt="Dictionary"
-            />
-            <h3 class="highlights__heading">Только лучшие учебники</h3>
-            <p class="highlights__content">
-              Аутентичные пособия, которые я использую, проверены годами.
-              Забудьте о скучных однообразных учебниках.
-            </p>
+          <div class="stat">
+            <p class="stat__n">61<span>%</span></p>
+            <p class="stat__l">сдали на 90+ баллов</p>
           </div>
-          <div class="highlights__element">
-            <img
-              class="highlights__icon"
-              src="./img/085-post-it.svg"
-              alt="Pin"
-            />
-            <h3 class="highlights__heading">Родитель всегда в курсе</h3>
-            <p class="highlights__content">
-              В течение всего времени обучения я держу контакт с родителями,
-              чтобы вместе решить возникающие трудности.
-            </p>
+
+          <div class="stat">
+            <p class="stat__n">29</p>
+            <p class="stat__l">учеников поступили в зарубежные вузы</p>
           </div>
         </div>
-      </section>
-      <section id="about" class="section">
-        <h2 class="h2 h2_modified">О преподавателе</h2>
-        <div class="about__wrapper">
-          <figure>
-            <img
-              class="about__img"
-              src="./img/About photo.png"
-              alt="About photo"
-            />
-            <figcaption class="about__caption">
-              Татьяна Михайловна Генина
-            </figcaption>
-          </figure>
-          <div>
-            <ul class="about__facts facts">
-              <li class="facts__item">
-                Более <span class="strong">25 лет</span> преподавания
-              </li>
-              <li class="facts__item">
-                <span class="strong">10 лет</span> преподавания в Московском
-                институте лингвистики
-              </li>
-              <li class="facts__item">
-                Квалификация подтверждена
-                <span class="strong">Cambridge Assessment English</span> (CELTA
-                - Certificate in Teaching English to Speakers of Other
-                Languages)
-              </li>
-              <li class="facts__item">
-                <span class="strong">Диплом</span> преподавателя английского
-                языка <span class="strong">с отличием</span> (Московский
-                институт лингвистики и массовой коммуникации)
-              </li>
-              <li class="facts__item">
-                <span class="strong">Два</span> высших образования
-                (филологическое и лингвистическое)
-              </li>
-              <li class="facts__item">
-                <span class="strong">Эксперт</span> по проверке заданий ОГЭ и
-                ЕГЭ
-              </li>
-              <li class="facts__item">
-                <span class="strong">Член жюри</span> Всероссийской Олимпиады
-              </li>
-              <li class="facts__item">
-                Постоянное <span class="strong">повышение квалификации</span>
-              </li>
-              <li class="facts__item">
-                <span class="strong">Сотни</span> успешных учеников
-              </li>
-            </ul>
-          </div>
+
+        <div class="unis reveal">
+          <span class="unis__item">МГУ</span>
+          <span class="unis__item">МГИМО</span>
+          <span class="unis__item">НИУ ВШЭ</span>
+          <span class="unis__item">МГЛУ</span>
+          <span class="unis__item">РЭУ им. Плеханова</span>
+          <span class="unis__item">РАНХиГС</span>
         </div>
-      </section>
-      <section class="section section_light" id="courses">
-        <h2 class="h2">Давайте учиться!</h2>
-        <p class="subheading">Посмотрите мои видео лекции</p>
-        <div class="webinar__container">
-          <div class="webinar__wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/MBH2Y4p9qA0"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              class="webinar__iframe"
-            ></iframe>
-            <p>ЕГЭ по английскому языку. Как подготовиться на высокий балл?</p>
-          </div>
-          <div class="webinar__wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/m5aHp7Bs6K0"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              class="webinar__iframe"
-            ></iframe>
-            <p>Как эффективно готовиться к ОГЭ-2023 по английскому языку?</p>
-          </div>
-        </div>
-      </section>
-      <section class="section exams" id="ege">
-        <h2 class="h2">
-          Курс подготовки к <span class="h2_em">ОГЭ и ЕГЭ</span>
-        </h2>
-        <p class="subheading">
-          Курс нацелен конкретно на сдачу ОГЭ / ЕГЭ, нет лишней информации
+
+        <p class="beforeafter reveal">
+          <span class="beforeafter__row"
+            ><em>До подготовки:</em> «Я в растерянности. Ничего не
+            получится».</span
+          >
+          <span class="beforeafter__row beforeafter__row--after"
+            ><em>После:</em> «Я готов. Я знаю, что делать. Я справлюсь».</span
+          >
         </p>
-        <ul class="aims">
-          <li class="aims__element">
-            Обязательное тестирование перед началом занятий
-          </li>
-          <li class="aims__element">
-            Тщательная проработка структуры экзамена позволяет не растеряться на
-            экзамене
-          </li>
-          <li class="aims__element">Использование индивидуального плана</li>
-          <li class="aims__element">
-            Регулярные тесты и диагностические работы
-          </li>
-          <li class="aims__element">Использование официальных пособий</li>
-          <li class="aims__element">
-            При занятии в мини группе регулярные вебинары в формате
-            «вопрос-ответ»
-          </li>
-          <li class="aims__element">
-            Проведение пробных экзаменов позволяет снизить уровень тревожности и
-            страха и сдать экзамен без лишних переживаний
-          </li>
-          <li class="aims__element">Разбор заданий прошлых лет</li>
-          <li class="aims__element">Подробный разбор ошибок</li>
-          <li class="aims__element">Запись занятия в случае пропуска</li>
-        </ul>
-        <a href="#formats" class="button">Выбрать формат занятий</a>
-      </section>
-      <section class="section section_light" id="formats">
-        <h2 class="h2">Форматы занятий</h2>
-        <p class="subheading">Выберите наиболее удобный формат</p>
-        <div class="formats">
-          <div class="formats__format format">
-            <h3 class="format__h3">Индивидуально</h3>
-            <img
-              class="format__icon"
-              src="./img/094-graduate-1.svg"
-              alt="Graduate"
-            />
-            <ul class="format__list">
-              <li class="format__item">
-                Тестирование на определение уровня, постановка цели
-              </li>
-              <li class="format__item">
-                Много разговорной практики - общение на английском языке на
-                занятии и в чатах
-              </li>
-              <li class="format__item">
-                Занятия онлайн – вы не привязаны к определенному месту, можно
-                заниматься из любой точки мира
-              </li>
-              <li class="format__item">
-                Возможность задать вопрос преподавателю вне занятия
-              </li>
-              <li class="format__item">
-                Все пробелы в знаниях под контролем преподавателя
-              </li>
-            </ul>
-            <h4 class="format__h4">Преимущества:</h4>
-            <ul class="format__list">
-              <li class="format__item">
-                Наиболее эффективный курс - все внимание преподавателя
-                направлено на ученика
-              </li>
-              <li class="format__item">Занятия по индивидуальному плану</li>
-              <li class="format__item">Комфортный темп занятий</li>
-              <li class="format__item">
-                Возможность задать вопрос вне занятия
-              </li>
-            </ul>
-            <a href="#contacts" class="button format__button">Записаться</a>
-          </div>
-          <div class="formats__format format">
-            <h3 class="format__h3">В паре или в группе</h3>
-            <img class="format__icon" src="./img/096-asking.svg" alt="Asking" />
-            <ul class="format__list">
-              <li class="format__item">
-                Тестирование на определение уровня, постановка цели
-              </li>
-              <li class="format__item">
-                Много разговорной практики - общение на английском языке на
-                занятии и в чатах
-              </li>
-              <li class="format__item">
-                Занятия онлайн – вы не привязаны к определенному месту, можно
-                заниматься из любой точки мира
-              </li>
-              <li class="format__item">
-                Возможность задать вопрос преподавателю вне занятия
-              </li>
-              <li class="format__item">
-                Все пробелы в знаниях под контролем преподавателя
-              </li>
-            </ul>
-            <h4 class="format__h4">Преимущества:</h4>
-            <ul class="format__list">
-              <li class="format__item">
-                Распределение в группу, соответствующую уровню знаний
-              </li>
-              <li class="format__item">
-                Разговорная практика между участниками группы, что создает
-                непринужденность общения
-              </li>
-              <li class="format__item">
-                Если занятие пропущено, высылается запись
-              </li>
-              <li class="format__item">
-                Стоимость ниже, чем за индивидуальное занятие
-              </li>
-            </ul>
-            <a href="#contacts" class="button format__button">Записаться</a>
-          </div>
-        </div>
-      </section>
-      <section class="section section_light bonus">
-        <h2 class="h2">Бонус!</h2>
-        <p class="bonus__content">
-          Я регулярно выкладываю советы и идеи для подготовки к экзамену в
-          <a
-            class="bonus__link"
-            target="_blank"
-            href="https://vk.com/tatiana_english_exams"
-            >сообщество ВК</a
-          >.
+
+        <p class="stories__lead reveal">
+          Как это выглядит в отдельных историях
         </p>
-        <p class="bonus__content">Скорее подписывайтесь!</p>
-        <a
-          class="button button_blue"
-          target="_blank"
-          href="https://vk.com/tatiana_english_exams"
-          >Посмотреть</a
+        <div
+          class="cases rail reveal"
+          tabindex="0"
+          role="group"
+          aria-label="Истории учеников, прокрутка по горизонтали"
         >
-      </section>
-      <section id="reviews" class="reviews section">
-        <h2 class="h2">Что говорят ученики</h2>
-        <div class="glide" id="options-type">
-          <div class="glide__track" data-glide-el="track">
-            <ul class="glide__slides">
-              <li class="glide__slide">
-                <img
-                  class="glide__image"
-                  src="./img/reviews/review2.JPG"
-                  alt="Review 2"
+          <article class="case">
+            <p class="case__name">Аня, 11 класс</p>
+            <p class="case__story">
+              Панический страх перед устной частью и сильный языковой барьер. За
+              три месяца усиленной практики отработали структуру ответов — страх
+              ушёл, появилась уверенность в своих силах.
+            </p>
+            <p class="case__out"><span>Устная часть</span><b>20 из 20</b></p>
+          </article>
+          <article class="case">
+            <p class="case__name">Марк, 11 класс</p>
+            <p class="case__story">
+              На старте — почти нулевая грамматика и полная путаница во
+              временах. К экзамену решал практически безошибочно, причём не
+              только грамматику, но и словообразование.
+            </p>
+            <p class="case__out">
+              <span>С нуля</span><b>к сильной грамматике</b>
+            </p>
+          </article>
+          <article class="case">
+            <p class="case__name">Полина, 11 класс</p>
+            <p class="case__story">
+              Цель — бюджет в МГИМО. В сентябре пробник на 78 баллов. Благодаря
+              чёткому плану и методике значительно улучшила результат.
+            </p>
+            <p class="case__out"><span>78 на пробнике</span><b>98 на ЕГЭ</b></p>
+          </article>
+        </div>
+        <p class="rail-hint">← →</p>
+
+        <p class="results__note reveal">
+          Более 500 учеников с 2010 года. Работаю и с теми, у кого хорошая база
+          и цель 90+, и с теми, кому нужно системно поднять результат со
+          среднего или начального уровня — это две разные задачи, и обе решаемы.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══ S6 · Who it's for ══════════════════════════════════ -->
+    <section class="section s-tint" id="audience">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Кому подходит</span>
+          <h2 class="h2">Моя специализация</h2>
+        </div>
+
+        <div class="aud reveal">
+          <article class="card">
+            <div class="card__icon">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"
                 />
-              </li>
-              <li class="glide__slide">
-                <img
-                  class="glide__image"
-                  src="./img/reviews/review3.JPG"
-                  alt="Review 3"
+                <path d="M22 10v6" />
+                <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+              </svg>
+            </div>
+            <h3 class="card__t">ЕГЭ</h3>
+            <p class="card__d">
+              Все разделы по плану до экзамена: аудирование, чтение, грамматика,
+              письмо и устная часть. Пробники с разбором по критериям.
+              Индивидуальный план подготовки с учётом уровня и целей ученика —
+              от диагностики до уверенной сдачи экзамена.
+            </p>
+          </article>
+          <article class="card">
+            <div class="card__icon">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
+                <path
+                  d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
                 />
-              </li>
-              <li class="glide__slide">
-                <img
-                  class="glide__image"
-                  src="./img/reviews/review4.JPG"
-                  alt="Review 4"
+                <path d="m9 14 2 2 4-4" />
+              </svg>
+            </div>
+            <h3 class="card__t">ОГЭ</h3>
+            <p class="card__d">
+              ОГЭ - генеральная репетиция ЕГЭ. Практически одинаковый формат и
+              критерии. Уже на этом этапе уходит языковой барьер. Часто это
+              первый экзамен в жизни — работаем и с ним, и с тревогой.
+            </p>
+          </article>
+          <article class="card">
+            <div class="card__icon">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M16 7h6v6" />
+                <path d="m22 7-8.5 8.5-5-5L2 17" />
+              </svg>
+            </div>
+            <h3 class="card__t">Повышение успеваемости</h3>
+            <p class="card__d">
+              Вместо заучивания правил — внятные объяснения, много разговорной
+              практики и, как результат, свободное владение языком к окончанию
+              школы.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ S5 · Why an examiner is different ══════════════════ -->
+    <section class="section s-plain">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Почему я</span>
+          <h2 class="h2">Почему выбирают меня</h2>
+          <p class="lede">
+            Серьезный опыт: более 25 лет в профессии, два высших образования –
+            лингвистическое и филологическое, международная квалификация,
+            эксперт&nbsp;ЕГЭ, проверяю и оцениваю сотни работ ежегодно.
+          </p>
+        </div>
+
+        <div class="why reveal">
+          <div class="why__item">
+            <div class="why__icon">
+              <svg class="ico ico--lg" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M10.5 22H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.706.706l3.588 3.588A2.4 2.4 0 0 1 20 8v6"
                 />
-              </li>
-              <li class="glide__slide">
-                <img
-                  class="glide__image"
-                  src="./img/reviews/review5.JPG"
-                  alt="Review 5"
-                />
-              </li>
-              <li class="glide__slide">
-                <img
-                  class="glide__image"
-                  src="./img/reviews/review6.JPG"
-                  alt="Review 6"
-                />
-              </li>
-              <li class="glide__slide">
-                <img
-                  class="glide__image"
-                  src="./img/reviews/review7.JPG"
-                  alt="Review 7"
-                />
-              </li>
-              <li class="glide__slide">
-                <img
-                  class="glide__image"
-                  src="./img/reviews/review8.JPG"
-                  alt="Review 8"
-                />
-              </li>
-              <li class="glide__slide">
-                <img
-                  class="glide__image"
-                  src="./img/reviews/review9.JPG"
-                  alt="Review 9"
-                />
-              </li>
-              <li class="glide__slide">
-                <img
-                  class="glide__image"
-                  src="./img/reviews/review10.JPG"
-                  alt="Review 10"
-                />
-              </li>
-              <li class="glide__slide">
-                <img
-                  class="glide__image"
-                  src="./img/reviews/review11.JPG"
-                  alt="Review 11"
-                />
-              </li>
-              <li class="glide__slide">
-                <img
-                  class="glide__image"
-                  src="./img/reviews/review12.JPG"
-                  alt="Review 12"
-                />
-              </li>
-              <li class="glide__slide">
-                <img
-                  class="glide__image"
-                  src="./img/reviews/review13.JPG"
-                  alt="Review 13"
-                />
-              </li>
-              <li class="glide__slide">
-                <img
-                  class="glide__image"
-                  src="./img/reviews/review14.JPG"
-                  alt="Review 14"
-                />
-              </li>
-              <li class="glide__slide">
-                <img
-                  class="glide__image"
-                  src="./img/reviews/review15.JPG"
-                  alt="Review 15"
-                />
-              </li>
-              <li class="glide__slide">
-                <img
-                  class="glide__image"
-                  src="./img/reviews/review16.JPG"
-                  alt="Review 16"
-                />
-              </li>
-              <li class="glide__slide">
-                <img
-                  class="glide__image"
-                  src="./img/reviews/review17.JPG"
-                  alt="Review 17"
-                />
-              </li>
-              <li class="glide__slide">
-                <img
-                  class="glide__image"
-                  src="./img/reviews/review18.JPG"
-                  alt="Review 18"
-                />
-              </li>
-              <li class="glide__slide">
-                <img
-                  class="glide__image"
-                  src="./img/reviews/review19.JPG"
-                  alt="Review 19"
-                />
-              </li>
-              <li class="glide__slide">
-                <img
-                  class="glide__image"
-                  src="./img/reviews/review20.JPG"
-                  alt="Review 20"
-                />
-              </li>
-            </ul>
+                <path d="M14 2v5a1 1 0 0 0 1 1h5" />
+                <path d="m14 20 2 2 4-4" />
+              </svg>
+            </div>
+            <h3 class="why__t">Проверяю реальные работы</h3>
+            <p class="why__d">
+              Я эксперт ЕГЭ. Ученик получает разбор работ по критериям — не
+              «примерно так», а буквально по пунктам: где потерян балл, за что
+              он снят и что изменить, чтобы в июне это не повторилось.
+            </p>
           </div>
-          <div class="glide__arrows slider__controls" data-glide-el="controls">
-            <button
-              class="glide__arrow glide__arrow--left slider__control slider__control_prev"
-              data-glide-dir="<"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="48"
-                height="48"
-                viewBox="0 0 64 64"
-                fill="#0B6EC3"
-                transform="rotate(180)"
-              >
+          <div class="why__item">
+            <div class="why__icon">
+              <svg class="ico ico--lg" viewBox="0 0 24 24" aria-hidden="true">
                 <path
-                  d="M28.373 13.546a2 2 0 0 0-2.746 2.908L42.087 32l-16.46 15.546a2 2 0 0 0 2.746 2.908l18-17a2.001 2.001 0 0 0 0-2.908l-18-17z"
+                  d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"
                 />
+                <path d="M11 12 5.12 2.2" />
+                <path d="m13 12 5.88-9.8" />
+                <path d="M8 7h8" />
+                <circle cx="12" cy="17" r="5" />
+              </svg>
+            </div>
+            <h3 class="why__t">Член жюри олимпиады</h3>
+            <p class="why__d">
+              Вижу верхнюю планку языка и понимаю, что отделяет крепкие 80 от
+              95. Если цель высокая, работаем именно с этой разницей, а не
+              «повторяем всё подряд».
+            </p>
+          </div>
+          <div class="why__item">
+            <div class="why__icon">
+              <svg class="ico ico--lg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 5v16" />
                 <path
-                  d="M32 0C23.453 0 15.417 3.329 9.374 9.373 3.329 15.417 0 23.453 0 32s3.33 16.583 9.374 22.626C15.417 60.671 23.453 64 32 64s16.583-3.329 22.626-9.373C60.671 48.583 64 40.547 64 32s-3.33-16.583-9.374-22.626C48.583 3.329 40.547 0 32 0zm19.797 51.798C46.509 57.087 39.479 60 32 60s-14.509-2.913-19.798-8.202C6.913 46.51 4 39.479 4 32s2.913-14.51 8.203-19.798C17.491 6.913 24.521 4 32 4s14.509 2.913 19.798 8.202C57.087 17.49 60 24.521 60 32s-2.913 14.51-8.203 19.798z"
+                  d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"
                 />
               </svg>
-            </button>
-            <button
-              class="glide__arrow glide__arrow--right slider__control slider__control_next"
-              data-glide-dir=">"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="48"
-                height="48"
-                viewBox="0 0 64 64"
-                fill="#0B6EC3"
-              >
-                <path
-                  d="M28.373 13.546a2 2 0 0 0-2.746 2.908L42.087 32l-16.46 15.546a2 2 0 0 0 2.746 2.908l18-17a2.001 2.001 0 0 0 0-2.908l-18-17z"
-                />
-                <path
-                  d="M32 0C23.453 0 15.417 3.329 9.374 9.373 3.329 15.417 0 23.453 0 32s3.33 16.583 9.374 22.626C15.417 60.671 23.453 64 32 64s16.583-3.329 22.626-9.373C60.671 48.583 64 40.547 64 32s-3.33-16.583-9.374-22.626C48.583 3.329 40.547 0 32 0zm19.797 51.798C46.509 57.087 39.479 60 32 60s-14.509-2.913-19.798-8.202C6.913 46.51 4 39.479 4 32s2.913-14.51 8.203-19.798C17.491 6.913 24.521 4 32 4s14.509 2.913 19.798 8.202C57.087 17.49 60 24.521 60 32s-2.913 14.51-8.203 19.798z"
-                />
-              </svg>
-            </button>
+            </div>
+            <h3 class="why__t">CELTA — Cambridge certificate</h3>
+            <p class="why__d">
+              Международный золотой стандарт преподавания: CELTA получают,
+              проводя реальные уроки под наблюдением экзаменаторов Кембриджа.
+              Плюс 10 лет в лингвистическом вузе. Знать язык и уметь научить —
+              разные вещи; у меня подтверждено и то, и другое.
+            </p>
           </div>
         </div>
-      </section>
-      <section class="section section_light advantages">
-        <h2 class="h2">Преимущества занятий со мной</h2>
-        <ol class="advantages__list">
-          <li class="advantages__item">
-            <h3 class="advantages__h3">Экспертный уровень преподавания</h3>
-            <p class="advantages__p">Высокий результат в конце обучения</p>
-          </li>
-          <li class="advantages__item">
-            <h3 class="advantages__h3">Серьезные результаты</h3>
-            <p class="advantages__p">
-              Мои ученики сдают экзамены на высокие баллы, уезжают учиться и
-              работать за границу, переходят на более высокие должности
-            </p>
-          </li>
-          <li class="advantages__item">
-            <h3 class="advantages__h3">Понятная структура занятий</h3>
-            <p class="advantages__p">
-              Создаю индивидуальный план для каждого ученика. Четко
-              придерживаемся цели.
-            </p>
-          </li>
-          <li class="advantages__item">
-            <h3 class="advantages__h3">Максимум пользы</h3>
-            <p class="advantages__p">
-              Каждое занятие имеет высокую ценность, нет «воды», разговоров «за
-              жизнь».
-            </p>
-          </li>
-          <li class="advantages__item">
-            <h3>Комфортная атмосфера</h3>
-            <p>
-              Мотивирую и поддерживаю на всем протяжении обучения. Занятия
-              интересны и увлекательны.
-            </p>
-          </li>
-          <li class="advantages__item">
-            <h3>Большой опыт</h3>
-            <p>
-              Многолетний интерес к психологии позволяет спрогнозировать
-              возможные проблемы и вовремя предотвратить их.
-            </p>
-          </li>
-          <li class="advantages__item">
-            <h3>Погружение в английский</h3>
-            <p>
-              Постепенно перевожу всех учеников на общение на английском во
-              время занятий и переписок в чатах. Уходит страх перед языком;
-              английский язык становится частью повседневной жизни.
-            </p>
-          </li>
-        </ol>
-      </section>
-      <section class="section contacts" id="contacts">
-        <h2 class="h2">
-          Задавайте вопросы и <span class="h2_em">записывайтесь</span>
-        </h2>
-        <div class="contacts__container">
-          <div>
-            <p class="contacts__desc">
-              Для этого используйте удобную вам соцсеть
-            </p>
-            <div class="contacts__links">
-              <div class="contacts__block">
-                <a
-                  class="contacts__link"
-                  href="https://vk.com/tgenina"
-                  target="_blank"
-                >
-                  <img
-                    class="contacts__image"
-                    src="./img/social/vk.svg"
-                    alt="VK"
-                  />
-                  <p class="contacts__text">vk.com/tgenina</p>
-                </a>
-              </div>
-              <div class="contacts__block">
-                <a
-                  class="contacts__link"
-                  href="https://t.me/tgenina"
-                  target="_blank"
-                >
-                  <img
-                    class="contacts__image"
-                    src="./img/social/telegram.svg"
-                    alt="Telegram"
-                  />
-                  <p class="contacts__text">t.me/tgenina</p>
-                </a>
-              </div>
+
+        <div class="videos reveal">
+          <a
+            class="video"
+            href="https://www.youtube.com/watch?v=MBH2Y4p9qA0"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              class="video__thumb"
+              src="https://i.ytimg.com/vi/MBH2Y4p9qA0/hqdefault.jpg"
+              alt=""
+              loading="lazy"
+            />
+            <span class="video__play">
+              <svg class="ico ico--lg" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z"
+                />
+                <circle cx="12" cy="12" r="10" />
+              </svg>
+            </span>
+            <span class="video__cap"
+              >ЕГЭ по английскому: как готовиться на высокий балл</span
+            >
+          </a>
+          <a
+            class="video"
+            href="https://www.youtube.com/watch?v=m5aHp7Bs6K0"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              class="video__thumb"
+              src="https://i.ytimg.com/vi/m5aHp7Bs6K0/hqdefault.jpg"
+              alt=""
+              loading="lazy"
+            />
+            <span class="video__play">
+              <svg class="ico ico--lg" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z"
+                />
+                <circle cx="12" cy="12" r="10" />
+              </svg>
+            </span>
+            <span class="video__cap"
+              >Как эффективно готовиться к ОГЭ по английскому</span
+            >
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ S8 · About + documents ═════════════════════════════ -->
+    <section class="section s-tint" id="about">
+      <div class="wrap bio">
+        <div class="bio__figure reveal">
+          <img
+            class="bio__photo"
+            src="./img/tatiana-about.jpg"
+            width="760"
+            height="760"
+            alt="Татьяна Михайловна Генина"
+            loading="lazy"
+          />
+          <p class="bio__name">Татьяна Михайловна Генина</p>
+        </div>
+
+        <div class="reveal">
+          <span class="eyebrow">О преподавателе</span>
+          <h2 class="h2">25 лет, и всё это время — английский</h2>
+          <p class="lede">
+            Десять лет в лингвистическом вузе, кембриджская методическая
+            подготовка CELTA, постоянное повышение квалификации, аттестованная
+            экспертиза в ЕГЭ и тысячи проверенных работ. К экзаменам готовлю с
+            2010 года; сотни учеников; 95% выпускников поступают в выбранный вуз
+            — но начинается всё с того, что подросток перестаёт бояться
+            предмета.
+          </p>
+
+          <div class="facts-grid">
+            <div class="bfact">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+              <span>Более <b>25 лет</b> преподавания</span>
+            </div>
+            <div class="bfact">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"
+                />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+              <span><b>Эксперт</b> по проверке заданий ОГЭ и ЕГЭ</span>
+            </div>
+            <div class="bfact">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"
+                />
+                <circle cx="12" cy="8" r="6" />
+              </svg>
+              <span
+                >Сертификат <b>CELTA</b> — преподавательская квалификация
+                Кембриджа</span
+              >
+            </div>
+            <div class="bfact">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 12h-5" />
+                <path d="M15 8h-5" />
+                <path d="M19 17V5a2 2 0 0 0-2-2H4" />
+                <path
+                  d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"
+                />
+              </svg>
+              <span
+                ><b>Диплом с отличием</b> — Московский институт лингвистики и
+                массовой коммуникации</span
+              >
+            </div>
+            <div class="bfact">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"
+                />
+                <path d="M22 10v6" />
+                <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+              </svg>
+              <span><b>Два высших</b>: филологическое и лингвистическое</span>
+            </div>
+            <div class="bfact">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M10 18v-7" />
+                <path
+                  d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"
+                />
+                <path d="M14 18v-7" />
+                <path d="M18 18v-7" />
+                <path d="M3 22h18" />
+                <path d="M6 18v-7" />
+              </svg>
+              <span
+                ><b>10 лет</b> в Московском институте лингвистики и массовой
+                коммуникации</span
+              >
             </div>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+
+    <!-- ═══ S7 · Process ═══════════════════════════════════════ -->
+    <section class="section s-plain" id="process">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Как проходит</span>
+          <h2 class="h2">От диагностики до экзамена</h2>
+        </div>
+
+        <div class="steps reveal">
+          <div class="step">
+            <div class="step__n">1</div>
+            <h3 class="step__t">Диагностика</h3>
+            <p class="step__d">
+              30 минут: смотрим текущий уровень, обсуждаем цель и сроки. Вы
+              получаете честный прогноз.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step__n">2</div>
+            <h3 class="step__t">План до экзамена</h3>
+            <p class="step__d">
+              Расписываю, что и когда мы проходим, чтобы к маю были закрыты все
+              разделы. Вы видите этот план.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step__n">3</div>
+            <h3 class="step__t">Занятия и работа дома</h3>
+            <p class="step__d">
+              Разбор темы, практика, домашняя работа. Каждую письменную работу
+              проверяю по критериям экзамена.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step__n">4</div>
+            <h3 class="step__t">Пробники</h3>
+            <p class="step__d">
+              Полный формат в реальном времени. К экзамену обстановка уже
+              привычная — и это снимает половину тревоги.
+            </p>
+          </div>
+        </div>
+
+        <div class="facts reveal">
+          <span class="fact"
+            ><svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 6v6l4 2" /></svg
+            >60 или 90 минут</span
+          >
+          <span class="fact"
+            ><svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 2v3" />
+              <path d="M16 2v3" />
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18" />
+              <path d="m9 15 2 2 4-4" /></svg
+            >1-2 раза в неделю</span
+          >
+          <span class="fact"
+            ><svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"
+              /></svg
+            >Собственные материалы и тренажёры</span
+          >
+          <span class="fact"
+            ><svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 5v16" />
+              <path
+                d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"
+              /></svg
+            >Официальные пособия и материалы ФИПИ</span
+          >
+          <span class="fact"
+            ><svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 6 9 17l-5-5" /></svg
+            >Перенос занятия за 24 часа — без потери</span
+          >
+        </div>
+
+        <!-- S7b · The answer to "will this money be wasted?" -->
+        <div class="protocol reveal" style="margin-top: var(--sp-8)">
+          <div class="protocol__icon">
+            <svg class="ico ico--lg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M16 7h6v6" />
+              <path d="m22 7-8.5 8.5-5-5L2 17" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="protocol__t">
+              Вы увидите прогресс в цифрах, а не на словах
+            </h3>
+            <p class="protocol__d">
+              Самый частый страх родителя — заплатить и не понять, изменилось ли
+              что-нибудь. Поэтому прогресс у нас измеряемый:
+              <b>первый пробник через 2–3 месяца</b>, дальше ещё несколько за
+              курс. Мы просто сравниваем баллы. Если роста нет — разбираемся
+              почему и меняем подход, а не ждём мая.
+            </p>
+            <div class="protocol__list">
+              <span class="protocol__li"
+                ><svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" /></svg
+                >4 пробника за курс</span
+              >
+              <span class="protocol__li"
+                ><svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" /></svg
+                >Отчёт родителю раз в месяц</span
+              >
+              <span class="protocol__li"
+                ><svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" /></svg
+                >Разбор каждой письменной работы по критериям</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="honest reveal">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 6v6l4 2" />
+          </svg>
+          <p>
+            <b>Если до экзамена осталось мало времени</b> — скажу честно, что
+            реально успеть. С 65 до 80 за три месяца — да. С 40 до 90 — нет, и я
+            не буду это обещать. На диагностике вы получите реалистичный
+            прогноз, а не удобный ответ.
+          </p>
+        </div>
+
+        <div class="cta-row reveal">
+          <a href="#contact" class="btn btn--cta" data-cta="process"
+            >Записаться на бесплатную диагностику</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ S6c · Atmosphere ══════════════════════════════════ -->
+    <section class="section s-tint">
+      <div class="wrap wrap--narrow">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Атмосфера</span>
+          <h2 class="h2">Как проходят занятия</h2>
+        </div>
+
+        <div class="mood reveal">
+          <div class="mood__col">
+            <div class="mood__icon">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362a2 2 0 0 0 2.879.052 2.12 2.12 0 0 0-.004-3 2.124 2.124 0 1 0 3-3 2.124 2.124 0 0 0 3.004 0 2 2 0 0 0 0-2.828l-1.881-1.882a2.41 2.41 0 0 0-3.409 0l-1.71 1.71a2 2 0 0 1-2.828 0 2 2 0 0 1 0-2.828l2.823-2.762"
+                />
+              </svg>
+            </div>
+            <h3 class="mood__t">Спокойно и без упрёков</h3>
+            <p class="mood__d">
+              На занятии ученик может ошибаться, не боясь критики и давления.
+              Ошибка — это информация о том, что делать дальше, а не повод
+              стыдить. Я верю, что каждый способен на большее, и создаю условия,
+              в которых расти комфортно.
+            </p>
+          </div>
+          <div class="mood__col">
+            <div class="mood__icon">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+            </div>
+            <h3 class="mood__t">Но требовательно</h3>
+            <p class="mood__d">
+              Я не сторонник вседозволенности. Если задание не сделано или
+              ученик не прикладывает усилий, я об этом скажу — спокойно и без
+              давления. Дисциплина и ответственность обязательны: без них
+              результата не будет.
+            </p>
+          </div>
+        </div>
+
+        <p class="mood__note reveal">
+          Моя задача — не только дать знания, но и научить работать
+          самостоятельно, брать ответственность за результат и чувствовать себя
+          на занятиях уверенно.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══ S9 · For parents ═══════════════════════════════════ -->
+    <section class="section s-plain">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Родителям</span>
+          <h2 class="h2">
+            Вы будете в курсе — и вам не придётся контролировать
+          </h2>
+          <p class="lede">
+            Экзамен сдаёт ребёнок, но тревожно обычно всей семье.<br />Вот что я
+            беру на себя.
+          </p>
+        </div>
+
+        <div class="parents reveal">
+          <article class="parent">
+            <div class="parent__icon">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"
+                />
+                <path d="M2 6h4" />
+                <path d="M2 10h4" />
+                <path d="M2 14h4" />
+                <path d="M2 18h4" />
+                <path
+                  d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"
+                />
+              </svg>
+            </div>
+            <h3 class="parent__t">Отчёт раз в месяц</h3>
+            <p class="parent__d">
+              Коротко: что прошли, что получается, над чем работаем дальше и как
+              идут пробники. Без педагогических формулировок — по-человечески.
+            </p>
+          </article>
+          <article class="parent">
+            <div class="parent__icon">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362a2 2 0 0 0 2.879.052 2.12 2.12 0 0 0-.004-3 2.124 2.124 0 1 0 3-3 2.124 2.124 0 0 0 3.004 0 2 2 0 0 0 0-2.828l-1.881-1.882a2.41 2.41 0 0 0-3.409 0l-1.71 1.71a2 2 0 0 1-2.828 0 2 2 0 0 1 0-2.828l2.823-2.762"
+                />
+              </svg>
+            </div>
+            <h3 class="parent__t">Вы не обязаны контролировать занятия</h3>
+            <p class="parent__d">
+              Контроль за выполнением за домашних заданий, сроками и подготовкой
+              к пробникам — моя часть работы. Вам не придётся напоминать и
+              проверять.
+            </p>
+          </article>
+          <article class="parent">
+            <div class="parent__icon">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+            </div>
+            <h3 class="parent__t">Ошибка — не повод для стресса</h3>
+            <p class="parent__d">
+              Ошибки показывают, над чем нужно работать и куда двигаться дальше.
+              Разбираем каждый недочет, закрепляем на практике и постепенно
+              превращаем слабые места в уверенные навыки.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ S6b · How to choose a tutor (promoted from blog) ════ -->
+    <section class="section s-tint">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Как выбирать</span>
+          <h2 class="h2">Как выбрать репетитора</h2>
+          <p class="lede">Критерии, которые считаю правильными.</p>
+        </div>
+
+        <div class="crit reveal">
+          <div class="crit__row">
+            <div class="crit__q">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="6" />
+                <circle cx="12" cy="12" r="2" />
+              </svg>
+              <p>
+                Опыт работы именно с этим экзаменом, а не «общий английский»
+              </p>
+            </div>
+            <div class="crit__a">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+              <p>Готовлю к ЕГЭ и ОГЭ с 2010 года, аттестованный эксперт ЕГЭ.</p>
+            </div>
+          </div>
+
+          <div class="crit__row">
+            <div class="crit__q">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 12h-5" />
+                <path d="M15 8h-5" />
+                <path d="M19 17V5a2 2 0 0 0-2-2H4" />
+                <path
+                  d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"
+                />
+              </svg>
+              <p>
+                Репетитор должен знать структуру экзамена и критерии оценивания
+              </p>
+            </div>
+            <div class="crit__a">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+              <p>
+                Спросите меня на диагностике о любом задании — разберу по баллам
+                и критериям.
+              </p>
+            </div>
+          </div>
+
+          <div class="crit__row">
+            <div class="crit__q">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 5v16" />
+                <path
+                  d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"
+                />
+              </svg>
+              <p>
+                Работает по проверенным пособиям, а не по «уникальной авторской
+                методике»
+              </p>
+            </div>
+            <div class="crit__a">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+              <p>
+                Все пособия и материалы одобрены ФИПИ — институтом, курирующим
+                ЕГЭ.
+              </p>
+            </div>
+          </div>
+
+          <div class="crit__row">
+            <div class="crit__q">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"
+                />
+                <path d="M2 6h4" />
+                <path d="M2 10h4" />
+                <path d="M2 14h4" />
+                <path d="M2 18h4" />
+                <path
+                  d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"
+                />
+              </svg>
+              <p>Даёт родителям регулярную обратную связь о прогрессе</p>
+            </div>
+            <div class="crit__a">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+              <p>
+                Короткий отчёт раз в месяц: что прошли, что получается, над чем
+                работаем дальше.
+              </p>
+            </div>
+          </div>
+
+          <div class="crit__row">
+            <div class="crit__q">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+              <p>Не обещает конкретный балл до того, как увидел ученика</p>
+            </div>
+            <div class="crit__a">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+              <p>
+                Показываю результаты прошлых учеников, но не обещаю баллы
+                будущим. Есть план и детальная стратегию.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ S10 · Formats + how price works ════════════════════ -->
+    <section class="section s-plain" id="formats">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Форматы</span>
+          <h2 class="h2">Индивидуально или в мини-группе</h2>
+          <p class="lede">Оба формата — онлайн.</p>
+        </div>
+
+        <div
+          class="formats rail reveal"
+          tabindex="0"
+          role="group"
+          aria-label="Форматы занятий, прокрутка по горизонтали"
+        >
+          <article class="fmt fmt--pick">
+            <span class="fmt__badge">Чаще выбирают</span>
+            <div class="fmt__icon">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="8" r="5" />
+                <path d="M20 21a8 8 0 0 0-16 0" />
+              </svg>
+            </div>
+            <h3 class="fmt__t">Индивидуально</h3>
+            <p class="fmt__meta">Один на один со мной</p>
+            <div class="fmt__list">
+              <p class="fmt__li">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" /></svg
+                >Программа под конкретные пробелы
+              </p>
+              <p class="fmt__li">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" /></svg
+                >Темп подстраивается — можно останавливаться сколько нужно
+              </p>
+              <p class="fmt__li">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" /></svg
+                >Максимум разговорной практики за занятие
+              </p>
+              <p class="fmt__li">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" /></svg
+                >Вопросы между занятиями — в чате
+              </p>
+            </div>
+          </article>
+
+          <article class="fmt">
+            <div class="fmt__icon">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <path d="M16 3.128a4 4 0 0 1 0 7.744" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <circle cx="9" cy="7" r="4" />
+              </svg>
+            </div>
+            <h3 class="fmt__t">В паре или мини-группе</h3>
+            <p class="fmt__meta">До 4 человек, подбор по уровню</p>
+            <div class="fmt__list">
+              <p class="fmt__li">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" /></svg
+                >Разговорная практика между участниками, а не только со мной
+              </p>
+              <p class="fmt__li">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" /></svg
+                >Группа собирается по уровню — никто не тянет и не отстаёт
+              </p>
+              <p class="fmt__li">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" /></svg
+                >Запись занятия, если пропустили
+              </p>
+              <p class="fmt__li">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" /></svg
+                >Дешевле индивидуального формата
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <p class="rail-hint">← →</p>
+
+        <div class="price-note reveal">
+          <p class="price-note__t">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" />
+              <circle cx="12" cy="12" r="6" />
+              <circle cx="12" cy="12" r="2" />
+            </svg>
+            Как формируется стоимость
+          </p>
+          <p>
+            Цена зависит от формата, частоты занятий и того, сколько времени
+            осталось до экзамена. Назвать её заранее, не понимая задачу, —
+            значит назвать наугад.
+          </p>
+          <p>
+            Обсудим на бесплатной диагностике, когда я увижу уровень и цель. Вы
+            будете точно знать, за что платите.
+          </p>
+          <p>
+            <b
+              >Я беру ограниченное число учеников в год, чтобы вести каждого
+              лично.</b
+            >
+          </p>
+        </div>
+
+        <div class="cta-row reveal">
+          <a href="#contact" class="btn btn--cta" data-cta="formats"
+            >Обсудить формат и стоимость</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ S11 · Reviews ══════════════════════════════════════ -->
+    <section class="section s-tint" id="reviews">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Отзывы</span>
+          <h2 class="h2">Что говорят родители и ученики</h2>
+          <p class="lede">
+            Отзывы — как есть. Ничего не переписано и не сокращено.
+          </p>
+        </div>
+
+        <div class="mosaic reveal" id="mosaic">
+          <figure class="mos">
+            <img
+              src="./img/reviews/review01.jpg"
+              alt="Отзыв Виолетты: с 65-70 на пробниках до 96 баллов на ЕГЭ"
+              loading="lazy"
+              width="620"
+              height="465"
+            />
+          </figure>
+          <figure class="mos">
+            <img
+              src="./img/reviews/review02.jpg"
+              alt="Отзыв Галины с Профи.ру: дочь набрала 85 баллов"
+              loading="lazy"
+              width="540"
+              height="530"
+            />
+          </figure>
+          <figure class="mos mos--text">
+            <svg
+              class="ico review__quote"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"
+              />
+              <path
+                d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"
+              />
+            </svg>
+            <blockquote class="mos__text">
+              Татьяна Михайловна отличный преподаватель. К ребёнку нашла подход
+              с первых занятий. Заниматься с ней комфортно. А главное у моей
+              дочери исчез языковой барьер, и она перестала стесняться говорить.
+            </blockquote>
+            <figcaption class="mos__who">
+              <b>Наталья</b><span>ОГЭ по английскому языку</span>
+            </figcaption>
+          </figure>
+          <figure class="mos">
+            <img
+              src="./img/reviews/review03.jpg"
+              alt="Переписка с ученицей: 86 баллов на ЕГЭ"
+              loading="lazy"
+              width="540"
+              height="610"
+            />
+          </figure>
+          <figure class="mos mos--more-sm">
+            <img
+              src="./img/reviews/review04.jpg"
+              alt="Отзыв Вероники с Профи.ру: экзамен на 95 баллов"
+              loading="lazy"
+              width="540"
+              height="644"
+            />
+          </figure>
+          <figure class="mos mos--more-sm">
+            <img
+              src="./img/reviews/review05.jpg"
+              alt="Отзыв Надежды с Профи.ру"
+              loading="lazy"
+              width="540"
+              height="626"
+            />
+          </figure>
+          <figure class="mos mos--text mos--more-sm">
+            <svg
+              class="ico review__quote"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"
+              />
+              <path
+                d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"
+              />
+            </svg>
+            <blockquote class="mos__text">
+              Замечательный репетитор английского языка. Ребёнок стеснительный,
+              но с Татьяной Михайловной занимается с удовольствием. Спустя три
+              месяца занятий уровень знаний заметно вырос. Продолжаем
+              заниматься. Усиленно готовимся к ОГЭ.
+            </blockquote>
+            <figcaption class="mos__who">
+              <b>Анастасия</b><span>Английский язык</span>
+            </figcaption>
+          </figure>
+          <figure class="mos mos--more-sm">
+            <img
+              src="./img/reviews/review06.jpg"
+              alt="Отзыв: победы на олимпиадах, пятый год занятий"
+              loading="lazy"
+              width="620"
+              height="1605"
+            />
+          </figure>
+          <figure class="mos mos--more-sm">
+            <img
+              src="./img/reviews/review07.jpg"
+              alt="Отзыв Элени: подготовка к ЕГЭ в мини-группе"
+              loading="lazy"
+              width="540"
+              height="337"
+            />
+          </figure>
+          <figure class="mos mos--more-sm">
+            <img
+              src="./img/reviews/review08.jpg"
+              alt="Отзыв Степана: поступление в МГУ"
+              loading="lazy"
+              width="620"
+              height="404"
+            />
+          </figure>
+          <figure class="mos mos--more">
+            <img
+              src="./img/reviews/review09.jpg"
+              alt="Отзыв Анны с Профи.ру"
+              loading="lazy"
+              width="540"
+              height="504"
+            />
+          </figure>
+          <figure class="mos mos--more">
+            <img
+              src="./img/reviews/review10.jpg"
+              alt="Отзыв Арсения — взрослый ученик"
+              loading="lazy"
+              width="526"
+              height="318"
+            />
+          </figure>
+          <figure class="mos mos--more">
+            <img
+              src="./img/reviews/review11.jpg"
+              alt="Отзыв Ольги с Профи.ру"
+              loading="lazy"
+              width="540"
+              height="338"
+            />
+          </figure>
+          <figure class="mos mos--more">
+            <img
+              src="./img/reviews/review12.jpg"
+              alt="Отзыв Ольги: ЕГЭ по английскому"
+              loading="lazy"
+              width="540"
+              height="282"
+            />
+          </figure>
+          <figure class="mos mos--more">
+            <img
+              src="./img/reviews/review13.jpg"
+              alt="Отзыв Ольги: урок почти полностью на английском"
+              loading="lazy"
+              width="540"
+              height="272"
+            />
+          </figure>
+          <figure class="mos mos--more">
+            <img
+              src="./img/reviews/review14.jpg"
+              alt="Благодарность за подготовку к ОГЭ"
+              loading="lazy"
+              width="522"
+              height="416"
+            />
+          </figure>
+          <figure class="mos mos--more">
+            <img
+              src="./img/reviews/review15.jpg"
+              alt="Благодарность за учебный год"
+              loading="lazy"
+              width="540"
+              height="335"
+            />
+          </figure>
+          <figure class="mos mos--more">
+            <img
+              src="./img/reviews/review16.jpg"
+              alt="Благодарность за работу в короткий срок"
+              loading="lazy"
+              width="466"
+              height="565"
+            />
+          </figure>
+          <figure class="mos mos--more">
+            <img
+              src="./img/reviews/review17.jpg"
+              alt="Благодарность от ученицы"
+              loading="lazy"
+              width="620"
+              height="443"
+            />
+          </figure>
+          <figure class="mos mos--more">
+            <img
+              src="./img/reviews/review18.jpg"
+              alt="Благодарность от учеников"
+              loading="lazy"
+              width="620"
+              height="430"
+            />
+          </figure>
+          <figure class="mos mos--more">
+            <img
+              src="./img/reviews/review19.jpg"
+              alt="Благодарность от родителей ученицы"
+              loading="lazy"
+              width="620"
+              height="449"
+            />
+          </figure>
+        </div>
+
+        <div class="reviews__more reveal">
+          <button
+            class="btn btn--ghost"
+            id="more-reviews"
+            aria-expanded="false"
+            aria-controls="mosaic"
+          >
+            Показать все отзывы
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ S12 · FAQ ══════════════════════════════════════════ -->
+    <section class="section s-plain" id="faq">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Вопросы</span>
+          <h2 class="h2">Что обычно спрашивают перед началом</h2>
+        </div>
+
+        <div class="faq reveal">
+          <details class="qa">
+            <summary class="qa__q">
+              С какого класса лучше начинать подготовку к ЕГЭ?
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </summary>
+            <p class="qa__a">
+              Оптимально — с 10 класса, чтобы спокойно разобрать все темы,
+              отработать формат экзамена и оставить время на регулярные
+              пробники.
+            </p>
+          </details>
+          <details class="qa">
+            <summary class="qa__q">
+              Можно ли подготовиться к ЕГЭ за один год?
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </summary>
+            <p class="qa__a">
+              Да, если заниматься системно и регулярно. Сначала проводится
+              диагностика, затем составляется индивидуальный план с учётом
+              уровня ученика и желаемого результата.
+            </p>
+          </details>
+          <details class="qa">
+            <summary class="qa__q">
+              Будут ли пробные экзамены?
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </summary>
+            <p class="qa__a">
+              Да, в процессе подготовки ученики регулярно выполняют пробники в
+              формате реального экзамена, после чего мы разбираем ошибки и
+              определяем дальнейшие шаги.
+            </p>
+          </details>
+          <details class="qa">
+            <summary class="qa__q">
+              Что делать, если у меня слабый английский?
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </summary>
+            <p class="qa__a">
+              Начинаем с базовых тем и постепенно выстраиваем фундамент:
+              грамматика, лексика, чтение, аудирование и навыки устной и
+              письменной речи.
+            </p>
+          </details>
+          <details class="qa">
+            <summary class="qa__q">
+              Как понять, подходит ли мне такой формат подготовки?
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </summary>
+            <p class="qa__a">
+              Запишитесь на диагностическую встречу: мы оценим текущий уровень,
+              обсудим цель и сроки, а также составим реалистичный план работы.
+            </p>
+          </details>
+          <details class="qa">
+            <summary class="qa__q">
+              Как понять, что занятия помогают?
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </summary>
+            <p class="qa__a">
+              По баллам пробников, а не по ощущениям. Первый — через 2–3 месяца,
+              дальше ещё несколько за курс, и вы видите динамику в цифрах. Плюс
+              ежемесячный отчёт. Школьные оценки показателем не считаю: они
+              зависят от учителя, а не от готовности к экзамену.
+            </p>
+          </details>
+          <details class="qa">
+            <summary class="qa__q">
+              Осталось три месяца. Успеем?
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </summary>
+            <p class="qa__a">
+              Зависит от того, откуда стартуем. С 65 до 80 за три месяца —
+              реально. С 40 до 90 — нет, и я не стану это обещать. На
+              диагностике я скажу прямо, что достижимо к вашей дате, даже если
+              ответ вам не понравится.
+            </p>
+          </details>
+
+          <details class="qa">
+            <summary class="qa__q">
+              Сколько занятий в неделю нужно?
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </summary>
+            <p class="qa__a">
+              Обычно два. Одного для экзамена мало — материал не успевает
+              закрепиться между встречами. Трёх для школьника с полной нагрузкой
+              может быть много. Будет уставать и начнет пропускать домашние
+              работы.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ S13 · Final CTA ════════════════════════════════════ -->
+    <section class="section s-accent" id="contact">
+      <div class="wrap wrap--narrow final">
+        <div class="reveal">
+          <span class="eyebrow">Первый шаг</span>
+          <h2 class="final__t">Бесплатная диагностика — 30 минут</h2>
+          <p class="final__d">
+            Посмотрим текущий уровень, обсудим цель и сроки.<br />Узнаете
+            реальный прогноз.
+          </p>
+
+          <div class="final__steps">
+            <span class="final__step">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+              Отвечу вам лично
+            </span>
+            <span class="final__step">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+              Познакомимся и обсудим цели
+            </span>
+            <span class="final__step">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+              Подберём удобное время
+            </span>
+          </div>
+
+          <div class="final__btns">
+            <a
+              class="btn btn--cta"
+              data-cta="final-tg"
+              href="https://t.me/tgenina?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%B4%D0%B8%D0%B0%D0%B3%D0%BD%D0%BE%D1%81%D1%82%D0%B8%D0%BA%D1%83"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg
+                class="soc-ico"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M16.114,9.291c.552-.552,1.1-1.84-1.2-.276-3.268,2.255-6.489,4.372-6.489,4.372a2.7,2.7,0,0,1-2.117.046c-1.38-.414-2.991-.966-2.991-.966s-1.1-.691.783-1.427c0,0,7.961-3.267,10.722-4.418,1.058-.46,4.647-1.932,4.647-1.932s1.657-.645,1.519.92c-.046.644-.414,2.9-.782,5.338-.553,3.451-1.151,7.225-1.151,7.225s-.092,1.058-.874,1.242a3.787,3.787,0,0,1-2.3-.828c-.184-.138-3.451-2.209-4.648-3.221a.872.872,0,0,1,.046-1.473C12.939,12.375,14.918,10.488,16.114,9.291Z"
+                />
+              </svg>
+              Написать в Telegram
+            </a>
+            <a
+              class="btn btn--light"
+              data-cta="final-vk"
+              href="https://vk.com/tgenina"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg
+                class="soc-ico"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7.828 12.026h.956s.289-.032.436-.191c.136-.146.131-.42.131-.42s-.019-1.283.577-1.472c.587-.186 1.341 1.24 2.14 1.789.604.415 1.063.324 1.063.324l2.137-.03s1.118-.069.588-.948c-.043-.072-.309-.65-1.589-1.838-1.34-1.244-1.16-1.042.454-3.193.983-1.31 1.376-2.11 1.253-2.452-.117-.326-.84-.24-.84-.24l-2.404.014s-.178-.024-.311.055c-.129.078-.212.258-.212.258s-.381 1.014-.889 1.876c-1.071 1.819-1.5 1.915-1.675 1.802-.407-.263-.305-1.058-.305-1.622 0-1.763.267-2.498-.521-2.688-.262-.063-.454-.105-1.123-.112-.858-.009-1.585.003-1.996.204-.274.134-.485.433-.356.45.159.021.519.097.71.357.247.335.238 1.089.238 1.089s.142 2.075-.331 2.333c-.325.177-.77-.184-1.725-1.835-.489-.845-.859-1.78-.859-1.78s-.071-.174-.198-.267c-.154-.113-.37-.149-.37-.149l-2.286.014s-.343.01-.469.159c-.112.133-.009.407-.009.407s1.79 4.187 3.816 6.298c1.859 1.935 3.969 1.808 3.969 1.808z"
+                />
+              </svg>
+              Написать во ВКонтакте
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ S14 · Footer ═══════════════════════════════════════ -->
     <footer class="footer">
-      <ul class="footer__list">
-        <li class="footer__item">
-          <a class="footer__link" href="#about">О преподавателе</a>
-        </li>
-        <li class="footer__item">
-          <a class="footer__link" href="#courses">Курсы</a>
-        </li>
-        <li class="footer__item">
-          <a class="footer__link" href="#reviews">Отзывы</a>
-        </li>
-        <li class="footer__item">
-          <a class="footer__link" href="#contacts">Контакты</a>
-        </li>
-        <li class="footer__item">
-          <a class="footer__link" href="./blog.html">Блог</a>
-        </li>
-      </ul>
-      <p class="copyright">&#169; 2024 Татьяна Генина</p>
+      <div class="footer__inner">
+        <div>
+          <p class="footer__logo">Татьяна <em>English</em></p>
+          <p class="footer__tagline">
+            Подготовка к ЕГЭ и ОГЭ по английскому языку. Онлайн, из любой точки.
+          </p>
+        </div>
+        <div>
+          <p class="footer__title">Разделы</p>
+          <ul class="footer__list">
+            <li><a href="#results">Результаты</a></li>
+            <li><a href="#process">Как проходит</a></li>
+            <li><a href="#about">О преподавателе</a></li>
+            <li><a href="#reviews">Отзывы</a></li>
+            <li><a href="#faq">Вопросы</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__title">Связаться</p>
+          <a
+            class="footer__soc"
+            href="https://t.me/tgenina"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg
+              class="soc-ico"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M16.114,9.291c.552-.552,1.1-1.84-1.2-.276-3.268,2.255-6.489,4.372-6.489,4.372a2.7,2.7,0,0,1-2.117.046c-1.38-.414-2.991-.966-2.991-.966s-1.1-.691.783-1.427c0,0,7.961-3.267,10.722-4.418,1.058-.46,4.647-1.932,4.647-1.932s1.657-.645,1.519.92c-.046.644-.414,2.9-.782,5.338-.553,3.451-1.151,7.225-1.151,7.225s-.092,1.058-.874,1.242a3.787,3.787,0,0,1-2.3-.828c-.184-.138-3.451-2.209-4.648-3.221a.872.872,0,0,1,.046-1.473C12.939,12.375,14.918,10.488,16.114,9.291Z"
+              />
+            </svg>
+            t.me/tgenina
+          </a>
+          <a
+            class="footer__soc"
+            href="https://vk.com/tgenina"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg
+              class="soc-ico"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M7.828 12.026h.956s.289-.032.436-.191c.136-.146.131-.42.131-.42s-.019-1.283.577-1.472c.587-.186 1.341 1.24 2.14 1.789.604.415 1.063.324 1.063.324l2.137-.03s1.118-.069.588-.948c-.043-.072-.309-.65-1.589-1.838-1.34-1.244-1.16-1.042.454-3.193.983-1.31 1.376-2.11 1.253-2.452-.117-.326-.84-.24-.84-.24l-2.404.014s-.178-.024-.311.055c-.129.078-.212.258-.212.258s-.381 1.014-.889 1.876c-1.071 1.819-1.5 1.915-1.675 1.802-.407-.263-.305-1.058-.305-1.622 0-1.763.267-2.498-.521-2.688-.262-.063-.454-.105-1.123-.112-.858-.009-1.585.003-1.996.204-.274.134-.485.433-.356.45.159.021.519.097.71.357.247.335.238 1.089.238 1.089s.142 2.075-.331 2.333c-.325.177-.77-.184-1.725-1.835-.489-.845-.859-1.78-.859-1.78s-.071-.174-.198-.267c-.154-.113-.37-.149-.37-.149l-2.286.014s-.343.01-.469.159c-.112.133-.009.407-.009.407s1.79 4.187 3.816 6.298c1.859 1.935 3.969 1.808 3.969 1.808z"
+              />
+            </svg>
+            vk.com/tgenina
+          </a>
+          <a
+            class="footer__soc"
+            href="https://t.me/tatiana_english_exams"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg
+              class="soc-ico"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M16.114,9.291c.552-.552,1.1-1.84-1.2-.276-3.268,2.255-6.489,4.372-6.489,4.372a2.7,2.7,0,0,1-2.117.046c-1.38-.414-2.991-.966-2.991-.966s-1.1-.691.783-1.427c0,0,7.961-3.267,10.722-4.418,1.058-.46,4.647-1.932,4.647-1.932s1.657-.645,1.519.92c-.046.644-.414,2.9-.782,5.338-.553,3.451-1.151,7.225-1.151,7.225s-.092,1.058-.874,1.242a3.787,3.787,0,0,1-2.3-.828c-.184-.138-3.451-2.209-4.648-3.221a.872.872,0,0,1,.046-1.473C12.939,12.375,14.918,10.488,16.114,9.291Z"
+              />
+            </svg>
+            Канал с разборами ЕГЭ
+          </a>
+          <a
+            class="footer__soc"
+            href="https://vk.com/tatiana_english_exams"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg class="ico ico--sm" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 5v16" />
+              <path
+                d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"
+              />
+            </svg>
+            Сообщество ВКонтакте
+          </a>
+          <a class="footer__policy" href="./privacy.html"
+            >Политика конфиденциальности</a
+          >
+        </div>
+      </div>
+      <p class="footer__bottom">© <span id="year">2026</span> Татьяна Генина</p>
     </footer>
+
+    <!-- ═══ S0 · Sticky mobile CTA ═════════════════════════════ -->
+    <div class="sticky-cta" id="sticky">
+      <a href="#contact" class="btn btn--cta btn--wide" data-cta="sticky"
+        >Бесплатная диагностика — 30 минут</a
+      >
+    </div>
+
+    <script>
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) {
+          if (document.scripts[j].src === r) {
+            return;
+          }
+        }
+        ((k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a));
+      })(
+        window,
+        document,
+        "script",
+        "https://mc.yandex.ru/metrika/tag.js?id=111442086",
+        "ym",
+      );
+      ym(111444356, "init", {
+        ssr: true,
+        webvisor: true,
+        clickmap: true,
+        ecommerce: "dataLayer",
+        referrer: document.referrer,
+        url: location.href,
+        accurateTrackBounce: true,
+        trackLinks: true,
+      });
+    </script>
+    <noscript
+      ><div>
+        <img
+          src="https://mc.yandex.ru/watch/111442086"
+          style="position: absolute; left: -9999px"
+          alt=""
+        /></div
+    ></noscript>
+
+    <script>
+      var YM_ID = 111442086;
+      function goal(name, params) {
+        if (typeof ym === "function") ym(YM_ID, "reachGoal", name, params);
+      }
+
+      document.addEventListener("click", function (e) {
+        var el = e.target.closest("[data-cta]");
+        if (!el) return;
+        var net = (el.href || "").indexOf("vk.com") > -1 ? "vk" : "tg";
+        goal("cta_click", { cta: el.getAttribute("data-cta"), net: net });
+        goal("contact_" + net);
+      });
+
+      var resultsEl = document.getElementById("results");
+      if (resultsEl && "IntersectionObserver" in window) {
+        new IntersectionObserver(
+          function (en, obs) {
+            if (en[0].isIntersecting) {
+              goal("saw_results");
+              obs.disconnect();
+            }
+          },
+          { threshold: 0.4 },
+        ).observe(resultsEl);
+      }
+
+      document.querySelectorAll(".qa").forEach(function (d) {
+        d.addEventListener("toggle", function () {
+          if (d.open)
+            goal("faq_open", {
+              q: d.querySelector("summary").textContent.trim().slice(0, 40),
+            });
+        });
+      });
+
+      document.getElementById("more-reviews") &&
+        document
+          .getElementById("more-reviews")
+          .addEventListener("click", function () {
+            goal("reviews_expand");
+          });
+    </script>
+
+    <div class="cookie" id="cookie" hidden>
+      <p class="cookie__text">
+        Сайт использует cookie. Подробнее — в
+        <a href="./privacy.html">политике конфиденциальности</a>.
+      </p>
+      <button class="cookie__ok" id="cookie-ok" type="button">Хорошо</button>
+    </div>
+
+    <script>
+      // Nav
+      const burger = document.getElementById("burger");
+      const links = document.getElementById("nav-links");
+      burger.addEventListener("click", () => {
+        const open = burger.getAttribute("aria-expanded") === "true";
+        burger.setAttribute("aria-expanded", String(!open));
+        links.dataset.open = String(!open);
+      });
+      links.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => {
+          burger.setAttribute("aria-expanded", "false");
+          links.dataset.open = "false";
+        }),
+      );
+
+      // Sticky CTA appears once the hero scrolls away, hides over the final CTA
+      const sticky = document.getElementById("sticky");
+      const hero = document.getElementById("top");
+      const contact = document.getElementById("contact");
+      let heroGone = false,
+        atContact = false;
+      const sync = () => {
+        sticky.dataset.show = String(heroGone && !atContact);
+      };
+
+      new IntersectionObserver(
+        ([e]) => {
+          heroGone = !e.isIntersecting;
+          sync();
+        },
+        { rootMargin: "-120px 0px 0px 0px" },
+      ).observe(hero);
+      new IntersectionObserver(([e]) => {
+        atContact = e.isIntersecting;
+        sync();
+      }).observe(contact);
+
+      // Scroll reveal
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.dataset.seen = "true";
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { rootMargin: "0px 0px -60px 0px", threshold: 0.08 },
+      );
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+      // Reviews: all of them are on the page, the long tail just starts collapsed
+      const moreBtn = document.getElementById("more-reviews");
+      moreBtn.addEventListener("click", () => {
+        document.getElementById("mosaic").dataset.expanded = "true";
+        moreBtn.setAttribute("aria-expanded", "true");
+        moreBtn.parentElement.remove();
+      });
+
+      // Cookie notice: informational, shown once, remembered locally
+      try {
+        if (!localStorage.getItem("cookie-ok")) {
+          var bar = document.getElementById("cookie");
+          bar.hidden = false;
+          document.body.dataset.cookie = "visible";
+          var setH = function () {
+            document.body.style.setProperty(
+              "--cookie-h",
+              bar.offsetHeight + "px",
+            );
+          };
+          setH();
+          window.addEventListener("resize", setH);
+          document
+            .getElementById("cookie-ok")
+            .addEventListener("click", function () {
+              bar.hidden = true;
+              delete document.body.dataset.cookie;
+              document.body.style.removeProperty("--cookie-h");
+              localStorage.setItem("cookie-ok", "1");
+            });
+        }
+      } catch (e) {
+        /* private mode — just don't show it */
+      }
+
+      // Anchors have to clear whatever is stuck to the top of the screen.
+      // That's the nav plus, when present, the amber strip — and the strip
+      // wraps to two lines on a phone, so the height is measured, not assumed.
+      (function () {
+        var navEl = document.querySelector(".nav");
+        var noticeEl = document.querySelector(".notice");
+        // Only count what is actually pinned: in landscape the strip goes
+        // static and stops covering anything.
+        var pinned = function (el) {
+          if (!el) return 0;
+          var pos = getComputedStyle(el).position;
+          return pos === "sticky" || pos === "fixed" ? el.offsetHeight : 0;
+        };
+        var setTop = function () {
+          var h = pinned(navEl) + pinned(noticeEl);
+          document.documentElement.style.setProperty(
+            "--sticky-top",
+            h + 12 + "px",
+          );
+        };
+        setTop();
+        window.addEventListener("resize", setTop);
+        window.addEventListener("orientationchange", setTop);
+      })();
+
+      // A rail only needs a "swipe me" hint if it actually overflows. At 768px
+      // two format cards fit side by side and the hint would be a lie.
+      (function () {
+        var syncHints = function () {
+          document.querySelectorAll(".rail").forEach(function (rail) {
+            var hint = rail.parentElement.querySelector(".rail-hint");
+            if (!hint) return;
+            hint.dataset.needed =
+              rail.scrollWidth > rail.clientWidth + 4 ? "true" : "false";
+          });
+        };
+        syncHints();
+        window.addEventListener("resize", syncHints);
+        window.addEventListener("load", syncHints);
+      })();
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
-  <script>
-    let glide = new Glide("#options-type", {
-      type: "slider",
-      focusAt: "center",
-      perView: 1,
-    });
-
-    glide.mount();
-
-    let element = document.getElementsByClassName("burger")[0];
-    element.addEventListener("click", function () {
-      element.classList.toggle("burger_open");
-    });
-  </script>
 </html>
