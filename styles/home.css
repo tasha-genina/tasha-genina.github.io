@@ -463,12 +463,18 @@
     transform var(--t),
     background var(--t);
 }
+/* Block, not inline: vertical padding on an inline span never expands the
+   box, which is what made the caption look cramped against the thumbnail. */
 .video__cap {
-  padding: var(--sp-4);
+  display: block;
+  padding: var(--sp-5);
+  font-family: var(--font-head);
   font-size: var(--fs-sm);
-  font-weight: 500;
-  color: var(--gray-700);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--gray-900);
   background: var(--blue-50);
+  border-top: 1px solid var(--blue-100);
 }
 
 @media (max-width: 780px) {
@@ -487,12 +493,20 @@
     margin-top: var(--sp-6);
   }
   .video__cap {
-    padding: var(--sp-3);
-    font-size: var(--fs-xs);
+    padding: var(--sp-4);
   }
   .video__play {
     width: 44px;
     height: 44px;
+  }
+}
+
+/* Two 16:9 thumbs side by side leave the caption too narrow to read below
+   this width — one per row instead. */
+@media (max-width: 600px) {
+  .videos {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
   }
 }
 
