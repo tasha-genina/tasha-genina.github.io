@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tgenina.ru/sitemap.xml
+Sitemap: https://tatianaenglish.ru/sitemap.xml
