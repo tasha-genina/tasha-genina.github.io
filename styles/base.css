@@ -485,34 +485,75 @@ h4 {
 }
 
 /* ── Sticky announcement strip ─────────────────────────────
-   Sits under the nav and stays there. Deliberately flat and
-   full-bleed so it reads as a banner, not as a button — amber
-   otherwise means "click here" everywhere else on the page. */
+   Sits under the nav and stays there. Flat and full-bleed so it
+   reads as a bar, not as a button. Navy, not amber: white on
+   amber-500 is 2.15:1 and fails AA for text this small, while
+   navy is 16:1 — and it leaves amber to mean "click here", which
+   is what it means everywhere else on the page. */
 .notice {
   position: sticky;
   top: 69px;              /* nav is 68px + 1px border */
   z-index: 199;
-  background: var(--amber-500);
-  padding: 0.45rem var(--gutter);
+  background: var(--blue-950);
+  /* No padding here: the link owns it, so the whole bar edge to edge is
+     clickable rather than just the run of text inside it. */
 }
 .notice__text {
   max-width: var(--maxw);
   margin-inline: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--sp-2);
+  display: block;
   font-size: var(--fs-xs);
-  font-weight: 600;            /* white on amber is low-contrast — weight helps a little */
+  font-weight: 600;            /* a bar reads as one object; the weight holds it together */
   line-height: 1.4;
   color: var(--white);
   text-align: center;
 }
 .notice__text .ico { color: rgba(255, 255, 255, 0.85); }
 
+/* The strip is a banner everywhere else, but the webinar has a destination,
+   so this one is a link. Underline only on hover/focus — a permanently
+   underlined full-width bar reads as broken, not as clickable. */
+/* A full-width bar gives no hint that it is clickable, so the affordance is
+   carried by its tail: the destination is styled as a link and an arrow says
+   it leads somewhere. Underlining the whole bar instead would read as broken
+   text, and a filled amber button here would fight the nav's real CTA. */
+.notice__link {
+  display: block;
+  padding: 0.45rem var(--gutter);
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+.notice__link:hover,
+.notice__link:focus-visible {
+  background: #1b2c63;         /* one step up from blue-950, still 13:1 on white */
+}
+.notice__go {
+  color: var(--amber-500);     /* 7.5:1 on the navy — and amber means "click" sitewide */
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+}
+.notice__arrow {
+  display: inline-block;
+  margin-left: 0.3em;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+.notice__link:hover .notice__arrow,
+.notice__link:focus-visible .notice__arrow {
+  transform: translateX(3px);
+}
+.notice__mark {
+  margin-right: 0.25em;
+  font-size: 1.05em;
+  line-height: 1;
+}
+
 @media (max-width: 560px) {
-  .notice { padding: 0.4rem var(--gutter); }
-  .notice__text { font-size: 11px; gap: var(--sp-1); }
+  .notice__link { padding: 0.4rem var(--gutter); }
+  .notice__text { font-size: 11px; }
   .notice__text .ico { display: none; }
 }
 
