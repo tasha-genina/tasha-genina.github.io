@@ -596,7 +596,9 @@ h4 {
   max-width: var(--maxw);
   margin-inline: auto;
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1.2fr;
+  /* 4 columns since the socials split into "Связаться" (booking) and
+     "Каналы" (follow) — mixing the two read as one undifferentiated list. */
+  grid-template-columns: 1.5fr 0.9fr 1.1fr 1.1fr;
   gap: var(--sp-8);
   padding-bottom: var(--sp-7);
   border-bottom: 1px solid var(--blue-200);
@@ -652,6 +654,14 @@ h4 {
   gap: var(--sp-2);
   margin-bottom: var(--sp-3);
 }
+/* .footer__soc is inline-flex so its hover target hugs the text; short
+   labels like "YouTube" and "TikTok" would otherwise pair up on one line.
+   The column wrapper forces one per row without changing the link box. */
+.footer__socs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 .footer__soc .soc-ico {
   width: 20px;
   height: 20px;
@@ -669,7 +679,14 @@ h4 {
   text-align: center;
 }
 
-@media (max-width: 780px) {
+@media (max-width: 1040px) {
+  .footer__inner {
+    grid-template-columns: 1fr 1fr;
+    row-gap: var(--sp-7);
+  }
+}
+
+@media (max-width: 560px) {
   .footer__inner {
     grid-template-columns: 1fr;
     gap: var(--sp-6);

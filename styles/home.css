@@ -417,6 +417,37 @@
   gap: var(--sp-5);
   margin-top: var(--sp-8);
 }
+/* Deliberately a text link, not a button: it sits mid-page and must stay
+   quieter than the diagnostic CTA it shares the page with. Blue, never
+   amber — amber is CTA-only. */
+.videos__more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-top: var(--sp-5);
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  color: var(--blue-600);
+  transition: color var(--t);
+}
+.videos__more .ico {
+  width: 18px;
+  height: 18px;
+  transition: transform var(--t);
+}
+.videos__more:hover {
+  color: var(--blue-700);
+}
+.videos__more:hover .ico {
+  transform: translateX(3px);
+}
+@media (pointer: coarse) {
+  .videos__more {
+    padding-block: var(--sp-2);
+  }
+}
+
 .video {
   position: relative;
   display: block;
