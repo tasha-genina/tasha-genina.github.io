@@ -20,6 +20,10 @@
   --blue-800: #1e40af;
   --blue-950: #131f45;
 
+  /* ── Red: signal ONLY. The deadline dot and nothing else — it is not
+     a third brand colour and never carries text or a surface. ── */
+  --red-600: #dc2626;
+
   /* ── Amber: CTA ONLY ── */
   --amber-500: #f59e0b;
   --amber-600: #d97706;

@@ -5,40 +5,39 @@
 /* ── S2 Hero ───────────────────────────────────────────── */
 .hero {
   background: var(--blue-50);
-  padding: clamp(2.5rem, 1rem + 5vw, 4.5rem) var(--gutter) 0;
+  padding: clamp(1.5rem, 0.6rem + 2.6vw, 2.75rem) var(--gutter) 0;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* The first screen, minus whatever the nav and the strip above it
+     occupy. --chrome-h is measured at runtime; the fallback covers a
+     68px nav plus a one-line notice. */
+  min-height: calc(100vh - var(--chrome-h, 101px) - var(--cookie-h, 0px));
+  min-height: calc(100svh - var(--chrome-h, 101px) - var(--cookie-h, 0px));
 }
 .hero__inner {
+  flex: 1;
+  width: 100%;
   max-width: var(--maxw);
   margin-inline: auto;
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: var(--sp-8);
+  grid-template-columns: 1.22fr 0.78fr;
+  gap: var(--sp-7);
   align-items: end;
 }
 .hero__content {
-  padding-bottom: clamp(2.5rem, 1rem + 5vw, 4.5rem);
+  /* The photo stays on the baseline; on a tall screen the slack goes
+     above and below the text rather than all of it above. */
+  align-self: center;
+  padding-bottom: clamp(1rem, 0.5rem + 1.6vw, 1.75rem);
 }
 
-.hero__tag {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--sp-2);
-  font-family: var(--font-head);
-  font-weight: 700;
-  font-size: var(--fs-xs);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--blue-700);
-  background: var(--white);
-  border: 1px solid var(--blue-200);
-  padding: 0.4rem 0.9rem;
-  border-radius: var(--r-full);
-  margin-bottom: var(--sp-5);
-}
 .hero__title {
-  font-size: var(--fs-h1);
+  /* Slightly below the global --fs-h1: this hero carries more than a
+     headline, and three lines of display type is the budget. */
+  font-size: clamp(1.95rem, 1.2rem + 3.1vw, 3rem);
   letter-spacing: -0.025em;
+  text-wrap: balance;
 }
 .hero__title b {
   color: var(--blue-600);
@@ -47,8 +46,32 @@
 .hero__sub {
   font-size: var(--fs-md);
   color: var(--gray-600);
-  max-width: 46ch;
+  max-width: 56ch;
   margin-top: var(--sp-4);
+}
+
+/* The proof that the alarm above is a rule and not a sales line. */
+.hero__quote {
+  max-width: 58ch;
+  margin-top: var(--sp-5);
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--white);
+  border: 1px solid var(--blue-200);
+  border-left: 4px solid var(--blue-500);
+  border-radius: var(--r-sm);
+  box-shadow: var(--sh-sm);
+}
+.hero__quote blockquote {
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  color: var(--gray-700);
+}
+.hero__quote figcaption {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gray-500);
 }
 
 /* Evidence, not promise — past tense, defensible. */
@@ -79,8 +102,12 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--sp-4);
-  margin-top: var(--sp-6);
+  gap: var(--sp-3);
+  margin-top: var(--sp-5);
+}
+.hero__actions .soc-ico {
+  width: 20px;
+  height: 20px;
 }
 .hero__micro {
   font-size: var(--fs-sm);
@@ -96,29 +123,73 @@
   padding-top: var(--sp-6);
   min-width: 0;
 }
-.hero__figure::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(100%, 430px);
-  aspect-ratio: 1;
-  max-height: 88%;
-  background: var(--blue-100);
-  border-radius: 50% 50% 0 0;
-  z-index: 0;
+/* On wider screens, centre the two-column row as one unit. The desktop tier
+   below stretches the portrait card to the copy's height; tablets keep their
+   more compact fixed-height portrait. */
+@media (min-width: 781px) {
+  .hero__inner {
+    flex: 0 0 auto;
+    margin-block: auto;
+    align-items: start;
+  }
+  .hero__content,
+  .hero__figure {
+    align-self: start;
+  }
+  .hero__figure {
+    padding-top: 0;
+  }
 }
 .hero__photo {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 380px;
-  height: clamp(360px, 41vw, 540px);
+  max-width: 360px;
+  height: clamp(320px, 34vw, 470px);
   object-fit: cover;
   object-position: center 30%;
-  border-radius: var(--r-lg) var(--r-lg) 0 0;
+  border-radius: var(--r-lg);
   box-shadow: var(--sh-lg);
+}
+@media (min-width: 901px) {
+  .hero__inner {
+    align-items: stretch;
+  }
+  .hero__figure {
+    align-self: stretch;
+  }
+  .hero__photo {
+    max-width: 400px;
+    height: 100%;
+  }
+}
+
+/* Short laptop screens. Same five things, tighter, so the credentials
+   still land on the first screen instead of being pushed under it. */
+@media (min-width: 901px) and (max-height: 880px) {
+  .hero {
+    padding-top: var(--sp-5);
+  }
+  .deadline {
+    margin-bottom: var(--sp-3);
+  }
+  .hero__title {
+    font-size: clamp(1.75rem, 1rem + 2.2vw, 2.4rem);
+  }
+  .hero__sub {
+    font-size: var(--fs-base);
+    margin-top: var(--sp-3);
+  }
+  .hero__quote {
+    margin-top: var(--sp-4);
+    padding: var(--sp-3) var(--sp-4);
+  }
+  .hero__actions {
+    margin-top: var(--sp-4);
+  }
+  .strip--hero {
+    padding-block: var(--sp-3);
+  }
 }
 
 @media (max-width: 900px) {
@@ -129,12 +200,12 @@
   .hero__content {
     padding-bottom: 0;
   }
-  .hero__figure::before {
-    width: min(100%, 360px);
-  }
   .hero__photo {
     max-width: 290px;
-    height: 350px;
+    height: 330px;
+  }
+  .hero__quote {
+    max-width: none;
   }
 }
 
@@ -143,6 +214,14 @@
   background: var(--white);
   border-bottom: 1px solid var(--gray-100);
   padding: var(--sp-5) var(--gutter);
+}
+/* Inside the hero it keeps its white band — it reads as the footing the
+   claim above stands on — and bleeds to the hero's own gutters. */
+.strip--hero {
+  border-bottom: 0;
+  border-top: 1px solid var(--blue-100);
+  margin-inline: calc(var(--gutter) * -1);
+  padding-block: var(--sp-4);
 }
 .strip__inner {
   max-width: var(--maxw);
@@ -316,16 +395,6 @@
   margin-inline: auto;
 }
 
-.stories__lead {
-  margin: var(--sp-8) 0 var(--sp-4);
-  font-family: var(--font-head);
-  font-weight: 700;
-  font-size: var(--fs-xs);
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: #a8bef0;
-  text-align: center;
-}
 .stat {
   text-align: center;
 }
@@ -347,19 +416,46 @@
   margin-top: var(--sp-2);
 }
 
+/* A logo wall on the accent section. Every file is a white monochrome
+   rendition on one 120px-tall canvas, optically balanced inside it — a
+   dense crest gets more height than a wordmark — so a single CSS height
+   governs the whole row. */
+.unis__lead {
+  margin: var(--sp-8) 0 var(--sp-5);
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #a8bef0;
+  text-align: center;
+}
 .unis {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: var(--sp-2) var(--sp-4);
-  margin-top: var(--sp-6);
+  align-items: center;
+  gap: var(--sp-5) var(--sp-8);
+  margin-bottom: var(--sp-9);
 }
-.unis__item {
-  font-family: var(--font-head);
-  font-weight: 700;
-  font-size: var(--fs-md);
-  color: #c9d8fa;
-  letter-spacing: 0.02em;
+.unis__logo {
+  height: 78px;
+  width: auto;
+  opacity: 0.9;
+  transition: opacity var(--t);
+}
+.unis__logo:hover {
+  opacity: 1;
+}
+
+@media (max-width: 780px) {
+  .unis {
+    gap: var(--sp-4) var(--sp-6);
+    margin-bottom: var(--sp-7);
+  }
+  .unis__logo {
+    height: 54px;
+  }
 }
 
 /* The honesty note that makes the deltas land. */
@@ -408,6 +504,60 @@
 }
 .why__d {
   font-size: var(--fs-sm);
+  color: var(--gray-500);
+}
+
+.webinar {
+  max-width: 780px;
+  margin: var(--sp-8) auto 0;
+  padding: var(--sp-6);
+  background: var(--blue-50);
+  border: 1px solid var(--blue-100);
+  border-radius: var(--r-md);
+  box-shadow: var(--sh-sm);
+}
+.webinar__intro {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+}
+.webinar__icon {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  display: grid;
+  place-items: center;
+  color: var(--blue-700);
+  background: var(--blue-100);
+  border-radius: 50%;
+}
+.webinar__label {
+  margin-bottom: var(--sp-1);
+  font-family: var(--font-head);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue-600);
+}
+.webinar__title {
+  font-size: var(--fs-h3);
+  font-weight: 700;
+}
+.webinar__description {
+  margin-top: var(--sp-1);
+  font-size: var(--fs-sm);
+  color: var(--gray-500);
+}
+.webinar__audio {
+  display: block;
+  width: 100%;
+  height: 54px;
+  margin-top: var(--sp-5);
+}
+.webinar__meta {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-xs);
   color: var(--gray-500);
 }
 
@@ -518,6 +668,18 @@
     height: 42px;
     margin-bottom: var(--sp-3);
   }
+  .webinar {
+    margin-top: var(--sp-6);
+    padding: var(--sp-5);
+  }
+  .webinar__intro {
+    align-items: flex-start;
+  }
+  .webinar__icon {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
   .videos {
     grid-template-columns: 1fr 1fr;
     gap: var(--sp-3);
@@ -541,48 +703,7 @@
   }
 }
 
-/* ── S6 Audience ───────────────────────────────────────── */
-.aud {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--sp-4);
-}
-.card {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--r-lg);
-  padding: var(--sp-6);
-  box-shadow: var(--sh-sm);
-  transition:
-    transform var(--t),
-    box-shadow var(--t),
-    border-color var(--t);
-}
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--sh-md);
-  border-color: var(--blue-200);
-}
-.card__icon {
-  width: 46px;
-  height: 46px;
-  border-radius: var(--r-sm);
-  background: var(--blue-50);
-  color: var(--blue-600);
-  display: grid;
-  place-items: center;
-  margin-bottom: var(--sp-4);
-}
-.card__t {
-  font-size: var(--fs-h3);
-  font-weight: 700;
-  margin-bottom: var(--sp-2);
-}
-.card__d {
-  font-size: var(--fs-sm);
-  color: var(--gray-500);
-}
-
+/* ── Honest-limits callout ─────────────────────────────── */
 .honest {
   display: flex;
   gap: var(--sp-4);
@@ -608,20 +729,7 @@
   color: var(--gray-900);
 }
 
-@media (max-width: 860px) {
-  .aud {
-    grid-template-columns: 1fr;
-  }
-}
 @media (max-width: 780px) {
-  .card {
-    padding: var(--sp-5);
-  }
-  .card__icon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: var(--sp-3);
-  }
   .honest {
     padding: var(--sp-4);
     margin-top: var(--sp-5);
@@ -1022,142 +1130,6 @@
   }
 }
 
-/* ── S10 Formats ───────────────────────────────────────── */
-.formats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--sp-5);
-  align-items: stretch;
-}
-.fmt {
-  position: relative;
-  background: var(--white);
-  border: 2px solid var(--gray-200);
-  border-radius: var(--r-lg);
-  padding: var(--sp-7);
-  display: flex;
-  flex-direction: column;
-  transition:
-    border-color var(--t),
-    box-shadow var(--t),
-    transform var(--t);
-}
-.fmt:hover {
-  border-color: var(--blue-300);
-  box-shadow: var(--sh-md);
-  transform: translateY(-3px);
-}
-.fmt--pick {
-  border-color: var(--blue-400);
-  background: var(--blue-50);
-}
-.fmt__badge {
-  position: absolute;
-  top: -13px;
-  left: var(--sp-7);
-  background: var(--blue-600);
-  color: var(--white);
-  font-family: var(--font-head);
-  font-weight: 700;
-  font-size: var(--fs-xs);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  padding: 0.3rem 0.85rem;
-  border-radius: var(--r-full);
-}
-.fmt__icon {
-  width: 46px;
-  height: 46px;
-  border-radius: var(--r-sm);
-  background: var(--white);
-  border: 1px solid var(--blue-200);
-  color: var(--blue-600);
-  display: grid;
-  place-items: center;
-  margin-bottom: var(--sp-4);
-}
-.fmt--pick .fmt__icon {
-  background: var(--blue-600);
-  border-color: var(--blue-600);
-  color: var(--white);
-}
-.fmt__t {
-  font-size: var(--fs-lg);
-  font-weight: 800;
-}
-.fmt__meta {
-  font-size: var(--fs-sm);
-  color: var(--gray-500);
-  margin-top: var(--sp-1);
-  margin-bottom: var(--sp-5);
-}
-.fmt__list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-3);
-  flex: 1;
-}
-.fmt__li {
-  display: flex;
-  gap: var(--sp-3);
-  align-items: flex-start;
-  font-size: var(--fs-sm);
-  color: var(--gray-600);
-}
-.fmt__li .ico {
-  color: var(--blue-500);
-  width: 18px;
-  height: 18px;
-  margin-top: 3px;
-}
-
-@media (max-width: 780px) {
-  .formats.rail {
-    padding-top: 16px;
-  }
-}
-
-.price-note {
-  max-width: 720px;
-  margin: var(--sp-7) auto 0;
-  background: var(--white);
-  border: 1px solid var(--blue-200);
-  border-radius: var(--r-md);
-  padding: var(--sp-6);
-  text-align: left;
-}
-.price-note__t {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-3);
-  font-family: var(--font-head);
-  font-weight: 800;
-  font-size: var(--fs-md);
-  color: var(--gray-900);
-  margin-bottom: var(--sp-3);
-}
-.price-note__t .ico {
-  color: var(--blue-600);
-}
-.price-note p {
-  font-size: var(--fs-sm);
-  color: var(--gray-600);
-}
-.price-note p + p {
-  margin-top: var(--sp-3);
-}
-
-@media (max-width: 860px) {
-  .formats {
-    grid-template-columns: 1fr;
-  }
-}
-@media (max-width: 780px) {
-  .fmt {
-    padding: var(--sp-5);
-  }
-}
-
 /* ── S11 Reviews ───────────────────────────────────────── */
 .mosaic {
   columns: 3;
@@ -1364,25 +1336,6 @@
   max-width: 56ch;
   margin: var(--sp-4) auto 0;
 }
-.final__steps {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--sp-3) var(--sp-6);
-  margin-top: var(--sp-6);
-}
-.final__step {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--sp-2);
-  font-size: var(--fs-sm);
-  color: #c9d8fa;
-}
-.final__step .ico {
-  color: var(--blue-300);
-  width: 18px;
-  height: 18px;
-}
 .final__btns {
   display: flex;
   flex-wrap: wrap;
@@ -1504,18 +1457,11 @@
     max-width: 250px;
     height: 330px;
   }
-  .hero__figure::before {
-    width: min(100%, 300px); /* wider than the 250px photo, so the arch still shows */
-  }
-
-  .aud,
-  .parents,
-  .formats {
+  .parents {
     grid-template-columns: 1fr 1fr;
   }
   /* An odd card left alone on the last row looks like a mistake;
      stretching it across reads as intentional. */
-  .aud > :last-child:nth-child(odd),
   .parents > :last-child:nth-child(odd) {
     grid-column: 1 / -1;
   }
@@ -1554,5 +1500,200 @@
   }
   .bfact {
     text-align: left;
+  }
+}
+
+/* ── S4b Group offer ───────────────────────────────────────
+   The price is blue, never amber: amber is CTA-only (base.css).
+   Slots stack on a phone rather than becoming a .rail — a slot
+   nobody scrolls to is a slot nobody books. */
+.offer {
+  display: grid;
+  grid-template-columns: minmax(190px, 0.58fr) 1.42fr;
+  gap: var(--sp-6);
+  background: var(--white);
+  border: 1px solid var(--blue-200);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-md);
+  padding: var(--sp-6);
+}
+.offer__price {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-right: 1px solid var(--gray-200);
+  padding-right: var(--sp-6);
+}
+.offer__from {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  color: var(--gray-500);
+}
+.offer__n {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: var(--fs-num);
+  line-height: 1.05;
+  color: var(--blue-700);
+  letter-spacing: -0.02em;
+}
+.offer__n span {
+  font-size: 0.6em;
+  color: var(--blue-500);
+}
+.offer__per {
+  font-size: var(--fs-sm);
+  color: var(--gray-500);
+  margin-top: var(--sp-1);
+}
+.offer__start {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-top: var(--sp-5);
+  padding: var(--sp-2) var(--sp-4);
+  background: var(--blue-50);
+  border-radius: var(--r-full);
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  color: var(--blue-700);
+}
+.offer__start .ico {
+  color: var(--blue-500);
+}
+.offer__t {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: var(--fs-h3);
+  color: var(--gray-900);
+  margin-bottom: var(--sp-4);
+}
+.offer__list {
+  list-style: none;
+  display: grid;
+  gap: var(--sp-3);
+}
+.offer__li {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: var(--sp-3);
+  align-items: start;
+  font-size: var(--fs-sm);
+}
+.offer__li .ico {
+  color: var(--blue-500);
+  margin-top: 3px;
+}
+.offer__cta {
+  grid-column: 1 / -1;
+  margin-top: var(--sp-2);
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--gray-200);
+  text-align: center;
+}
+.offer__btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-3);
+}
+.offer__btns .soc-ico {
+  width: 20px;
+  height: 20px;
+}
+.offer__note {
+  max-width: 54ch;
+  margin: var(--sp-4) auto 0;
+  font-size: var(--fs-sm);
+  color: var(--gray-600);
+}
+
+.offer__fine {
+  margin-top: var(--sp-5);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--gray-200);
+  font-size: var(--fs-xs);
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+.lock {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  max-width: 62ch;
+  margin: var(--sp-6) auto 0;
+  font-size: var(--fs-sm);
+  color: var(--gray-600);
+}
+.lock .ico {
+  flex: none;
+  color: var(--blue-500);
+  margin-top: 2px;
+}
+
+@media (max-width: 860px) {
+  .offer {
+    grid-template-columns: 1fr;
+  }
+  .offer__price {
+    border-right: 0;
+    border-bottom: 1px solid var(--gray-200);
+    padding-right: 0;
+    padding-bottom: var(--sp-5);
+  }
+}
+/* ── Deadline chip ─────────────────────────────────────────
+   Sits where the hero tag used to, above the headline: the reader
+   meets the deadline before the pitch. The chip stays blue, not amber —
+   amber is CTA-only and this must not read as a button. The dot alone is
+   red: a live signal, 8px, carrying no text. */
+.deadline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-2) var(--sp-4);
+  background: var(--white);
+  border: 1px solid var(--blue-200);
+  border-radius: var(--r-full);
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  color: var(--blue-800);
+  white-space: nowrap;
+  margin-bottom: var(--sp-4);
+}
+.deadline__dot {
+  position: relative;
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--red-600);
+}
+.deadline__dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--red-600);
+  animation: deadline-pulse 2.4s ease-out infinite;
+}
+@keyframes deadline-pulse {
+  from {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(2.8);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .deadline__dot::after {
+    animation: none;
   }
 }
