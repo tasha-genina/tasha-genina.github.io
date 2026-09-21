@@ -47,55 +47,69 @@
   font-size: var(--fs-md);
   color: var(--gray-600);
   max-width: 56ch;
-  margin-top: var(--sp-4);
+  margin-top: var(--sp-3);
 }
 
-/* The proof that the alarm above is a rule and not a sales line. */
-.hero__quote {
-  max-width: 58ch;
-  margin-top: var(--sp-5);
-  padding: var(--sp-4) var(--sp-5);
-  background: var(--white);
-  border: 1px solid var(--blue-200);
-  border-left: 4px solid var(--blue-500);
-  border-radius: var(--r-sm);
-  box-shadow: var(--sh-sm);
+/* ── S3b The ФИПИ rule ─────────────────────────────────────
+   The quotation that used to sit in the hero. With a band of its own it can
+   be set large — this is the one sentence the whole positioning rests on,
+   and at hero size it was a footnote. */
+.rule {
+  max-width: 46ch;
+  margin: var(--sp-6) auto 0;
+  padding-left: var(--sp-5);
+  border-left: 3px solid var(--blue-400);
 }
-.hero__quote blockquote {
-  font-size: var(--fs-sm);
-  line-height: 1.55;
-  color: var(--gray-700);
+.rule blockquote {
+  font-family: var(--font-head);
+  font-size: var(--fs-md);
+  line-height: 1.5;
+  color: var(--gray-800);
 }
-.hero__quote figcaption {
-  margin-top: var(--sp-2);
+.rule figcaption {
+  margin-top: var(--sp-3);
   font-size: var(--fs-xs);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--gray-500);
 }
 
-/* Evidence, not promise — past tense, defensible. */
-.hero__proof {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--sp-3);
-  margin-top: var(--sp-5);
-  padding: var(--sp-3) var(--sp-4);
+/* Two rows of chips: what she has done, then what it costs. Each number is
+   its own object, so it is read as evidence rather than scanned as a line of
+   prose — and the two rows stay separate rows, because mixing outcome and
+   price into one strip loses which is which.
+   No border and no shadow on purpose: a bordered plate here read as a second
+   button and competed with the amber CTA, which has to be the only thing in
+   the hero that looks pressable. A soft plate reads as a label.
+   .hero__facts--proof is evidence, not promise: past tense, and both figures
+   are the ones the results section already publishes.
+   .hero__facts--offer repeats the Директ ad word for word, so paid traffic
+   lands on what it was sold. */
+.hero__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+.hero__facts li {
+  padding: var(--sp-2) var(--sp-3);
   background: var(--white);
-  border: 1px solid var(--blue-200);
-  border-left: 4px solid var(--blue-500);
   border-radius: var(--r-sm);
-  box-shadow: var(--sh-sm);
   font-size: var(--fs-sm);
-  color: var(--gray-700);
+  line-height: 1.35;
+  color: var(--gray-600);
 }
-.hero__proof b {
+.hero__facts b {
   font-family: var(--font-head);
-  font-size: var(--fs-lg);
+  font-weight: 800;
   color: var(--blue-700);
+  white-space: nowrap;
 }
-.hero__proof .ico {
-  color: var(--blue-500);
+.hero__facts--proof {
+  margin-top: var(--sp-5);
+}
+/* Air between the two rows, or they read as one paragraph of numbers. */
+.hero__facts--offer {
+  margin-top: var(--sp-4);
 }
 
 .hero__actions {
@@ -103,11 +117,30 @@
   flex-wrap: wrap;
   align-items: center;
   gap: var(--sp-3);
-  margin-top: var(--sp-5);
+  /* Wider than the gap between the two chip rows — otherwise the button
+     joins the chips as a third row instead of closing the block. */
+  margin-top: var(--sp-6);
 }
 .hero__actions .soc-ico {
   width: 20px;
   height: 20px;
+}
+/* The second-choice messenger, visibly second: its own line, a size down
+   from the micro copy above it. */
+.hero__altline {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-xs);
+  color: var(--gray-400);
+}
+.hero__alt {
+  color: var(--gray-500);
+  border-bottom: 1px solid var(--gray-200);
+  white-space: nowrap;
+  transition: color var(--t), border-color var(--t);
+}
+.hero__alt:hover {
+  color: var(--blue-700);
+  border-bottom-color: var(--blue-300);
 }
 .hero__micro {
   font-size: var(--fs-sm);
@@ -180,9 +213,13 @@
     font-size: var(--fs-base);
     margin-top: var(--sp-3);
   }
-  .hero__quote {
+  /* The group gaps compress too, or the blocks stop reading as groups
+     on a short screen. */
+  .hero__facts--proof {
     margin-top: var(--sp-4);
-    padding: var(--sp-3) var(--sp-4);
+  }
+  .hero__facts--offer {
+    margin-top: var(--sp-3);
   }
   .hero__actions {
     margin-top: var(--sp-4);
@@ -197,6 +234,17 @@
     grid-template-columns: 1fr;
     gap: var(--sp-5);
   }
+  /* At full size each chip claimed a row of its own, so four facts became
+     four white bars down the screen. A size down fits two per row and the
+     two rows read as the two groups they are. */
+  .deadline,
+  .hero__facts li {
+    padding: 6px var(--sp-2);
+    font-size: var(--fs-xs);
+  }
+  .hero__facts {
+    gap: 6px;
+  }
   .hero__content {
     padding-bottom: 0;
   }
@@ -204,8 +252,11 @@
     max-width: 290px;
     height: 330px;
   }
-  .hero__quote {
-    max-width: none;
+  /* Stacked, the photo lands directly on the strip's top border — nothing
+     sits between them once the grid collapses to one column. On desktop the
+     photo is in the other column and the gap comes for free. */
+  .strip--hero {
+    margin-top: var(--sp-6);
   }
 }
 
@@ -248,6 +299,31 @@
   color: var(--blue-500);
   width: 20px;
   height: 20px;
+}
+
+/* Narrow screens: every item ends up on a line of its own anyway, and a
+   centred row then gives each one a different left edge. Worse where the
+   text inside an item wraps to two lines — that item reads as left-aligned
+   next to neighbours that read as centred, which is the ragged effect.
+   A left-aligned column puts every icon in one column and every line on one
+   edge; the icon pins to the first line instead of floating beside two. */
+@media (max-width: 560px) {
+  .strip__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+  .strip__item {
+    align-items: flex-start;
+  }
+  .strip__item .ico {
+    flex: none;
+    margin-top: 2px;
+  }
+  /* A forced line break is meaningless once the items are a column. */
+  .strip__break {
+    display: none;
+  }
 }
 
 /* ── S4 Results (accent) ───────────────────────────────── */
@@ -377,14 +453,16 @@
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* minmax(0, 1fr), not 1fr: a grid item defaults to min-width:auto, so the
+     36px figures refuse to shrink and the row runs past a ~300px screen. */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--sp-4);
   margin-top: var(--sp-6);
   padding-top: var(--sp-6);
   border-top: 1px solid rgba(255, 255, 255, 0.16);
 }
 .stats--six {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--sp-7) var(--sp-4);
   margin-top: 0;
   padding-top: 0;
@@ -1467,20 +1545,15 @@
    meets the deadline before the pitch. The chip stays blue, not amber —
    amber is CTA-only and this must not read as a button. The dot alone is
    red: a live signal, 8px, carrying no text. */
+/* The deadline is the fifth fact chip, not a badge of its own: it sits in
+   the offer row beside group size and price, because that is what it is —
+   a term of the offer. Everything but the pulsing dot is inherited from
+   .hero__facts li, so the row stays one visual language. */
 .deadline {
   display: inline-flex;
   align-items: center;
-  gap: var(--sp-3);
-  padding: var(--sp-2) var(--sp-4);
-  background: var(--white);
-  border: 1px solid var(--blue-200);
-  border-radius: var(--r-full);
-  font-family: var(--font-head);
-  font-weight: 700;
-  font-size: var(--fs-sm);
-  color: var(--blue-800);
+  gap: var(--sp-2);
   white-space: nowrap;
-  margin-bottom: var(--sp-4);
 }
 .deadline__dot {
   position: relative;

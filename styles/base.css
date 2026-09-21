@@ -462,7 +462,13 @@ h4 {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-@media (max-width: 860px) {
+/* 980px, not 860: the horizontal nav needs ~960px before the links stop
+   fitting beside the logo, and between 861 and 960 they ran off the right
+   edge and were clipped by the body's overflow-x. The sticky CTA and the
+   cookie-bar offsets below share this breakpoint on purpose — the burger
+   hides the nav's CTA, so the sticky one has to appear at the same width
+   or a whole band of tablet sizes has no visible call to action. */
+@media (max-width: 980px) {
   .burger {
     display: flex;
   }
@@ -594,12 +600,17 @@ h4 {
 .sticky-cta[data-show="true"] {
   transform: none;
 }
-@media (max-width: 860px) {
+@media (max-width: 980px) {
   .sticky-cta {
     display: block;
   }
-  body {
-    padding-bottom: 84px;
+  /* Room for the fixed CTA. It is reserved on the footer, never on body:
+     body is white, so a reservation there paints a white strip under the
+     blue footer the moment the bar is hidden — which is exactly what
+     happens at the foot of the page, where the sticky CTA steps aside
+     for #contact. */
+  .footer {
+    padding-bottom: calc(var(--sp-5) + 84px);
   }
 }
 
@@ -782,12 +793,12 @@ h4 {
 
 /* Keep the sticky CTA clear of the notice. The bar's height depends on how the
    text wraps, so it's measured at runtime into --cookie-h rather than guessed. */
-@media (max-width: 860px) {
+@media (max-width: 980px) {
   body[data-cookie="visible"] .sticky-cta {
     bottom: var(--cookie-h, 0px);
   }
-  body[data-cookie="visible"] {
-    padding-bottom: calc(84px + var(--cookie-h, 0px));
+  body[data-cookie="visible"] .footer {
+    padding-bottom: calc(var(--sp-5) + 84px + var(--cookie-h, 0px));
   }
 }
 
@@ -820,7 +831,7 @@ h4 {
   .sticky-cta .btn {
     padding-block: 0.55rem;
   }
-  body {
-    padding-bottom: 68px;
+  .footer {
+    padding-bottom: calc(var(--sp-5) + 68px);
   }
 }
