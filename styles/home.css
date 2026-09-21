@@ -507,157 +507,6 @@
   color: var(--gray-500);
 }
 
-.webinar {
-  max-width: 780px;
-  margin: var(--sp-8) auto 0;
-  padding: var(--sp-6);
-  background: var(--blue-50);
-  border: 1px solid var(--blue-100);
-  border-radius: var(--r-md);
-  box-shadow: var(--sh-sm);
-}
-.webinar__intro {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-4);
-}
-.webinar__icon {
-  width: 52px;
-  height: 52px;
-  flex: 0 0 52px;
-  display: grid;
-  place-items: center;
-  color: var(--blue-700);
-  background: var(--blue-100);
-  border-radius: 50%;
-}
-.webinar__label {
-  margin-bottom: var(--sp-1);
-  font-family: var(--font-head);
-  font-size: var(--fs-xs);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--blue-600);
-}
-.webinar__title {
-  font-size: var(--fs-h3);
-  font-weight: 700;
-}
-.webinar__description {
-  margin-top: var(--sp-1);
-  font-size: var(--fs-sm);
-  color: var(--gray-500);
-}
-.webinar__audio {
-  display: block;
-  width: 100%;
-  height: 54px;
-  margin-top: var(--sp-5);
-}
-.webinar__meta {
-  margin-top: var(--sp-2);
-  font-size: var(--fs-xs);
-  color: var(--gray-500);
-}
-
-.videos {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--sp-5);
-  margin-top: var(--sp-8);
-}
-/* Deliberately a text link, not a button: it sits mid-page and must stay
-   quieter than the diagnostic CTA it shares the page with. Blue, never
-   amber — amber is CTA-only. */
-.videos__more {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--sp-2);
-  margin-top: var(--sp-5);
-  font-family: var(--font-head);
-  font-weight: 700;
-  font-size: var(--fs-sm);
-  color: var(--blue-600);
-  transition: color var(--t);
-}
-.videos__more .ico {
-  width: 18px;
-  height: 18px;
-  transition: transform var(--t);
-}
-.videos__more:hover {
-  color: var(--blue-700);
-}
-.videos__more:hover .ico {
-  transform: translateX(3px);
-}
-@media (pointer: coarse) {
-  .videos__more {
-    padding-block: var(--sp-2);
-  }
-}
-
-.video {
-  position: relative;
-  display: block;
-  border-radius: var(--r-md);
-  overflow: hidden;
-  background: var(--blue-50);
-  border: 1px solid var(--blue-100);
-  box-shadow: var(--sh-sm);
-  transition:
-    transform var(--t),
-    box-shadow var(--t);
-}
-.video:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--sh-md);
-}
-.video__thumb {
-  width: 100%;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  opacity: 0.88;
-  transition: opacity var(--t);
-}
-.video:hover .video__thumb {
-  opacity: 1;
-}
-.video:hover .video__play {
-  transform: scale(1.08);
-  background: var(--blue-700);
-}
-.video__play {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 62px;
-  height: 62px;
-  border-radius: 50%;
-  background: var(--blue-600);
-  color: var(--white);
-  display: grid;
-  place-items: center;
-  box-shadow: var(--sh-md);
-  transition:
-    transform var(--t),
-    background var(--t);
-}
-/* Block, not inline: vertical padding on an inline span never expands the
-   box, which is what made the caption look cramped against the thumbnail. */
-.video__cap {
-  display: block;
-  padding: var(--sp-5);
-  font-family: var(--font-head);
-  font-size: var(--fs-sm);
-  font-weight: 700;
-  line-height: 1.4;
-  color: var(--gray-900);
-  background: var(--blue-50);
-  border-top: 1px solid var(--blue-100);
-}
-
 @media (max-width: 780px) {
   .why {
     grid-template-columns: 1fr;
@@ -667,39 +516,6 @@
     width: 42px;
     height: 42px;
     margin-bottom: var(--sp-3);
-  }
-  .webinar {
-    margin-top: var(--sp-6);
-    padding: var(--sp-5);
-  }
-  .webinar__intro {
-    align-items: flex-start;
-  }
-  .webinar__icon {
-    width: 42px;
-    height: 42px;
-    flex-basis: 42px;
-  }
-  .videos {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--sp-3);
-    margin-top: var(--sp-6);
-  }
-  .video__cap {
-    padding: var(--sp-4);
-  }
-  .video__play {
-    width: 44px;
-    height: 44px;
-  }
-}
-
-/* Two 16:9 thumbs side by side leave the caption too narrow to read below
-   this width — one per row instead. */
-@media (max-width: 600px) {
-  .videos {
-    grid-template-columns: 1fr;
-    gap: var(--sp-4);
   }
 }
 
@@ -1695,5 +1511,271 @@
 @media (prefers-reduced-motion: reduce) {
   .deadline__dot::after {
     animation: none;
+  }
+}
+
+/* ── S13b · Пока присматриваетесь ──────────────────────────
+   Absorbed into the accent CTA section. Three tiles under the ask,
+   on the same dark ground.
+
+   They must read as one system and stay a rank below the two buttons
+   above them, so the rank is carried by FILL, not by size: the ask is
+   solid amber and solid white, every tile here is translucent with a
+   thin white hairline and an outline button. No amber below this line. */
+.peek__lead {
+  margin-top: var(--sp-8);
+  text-align: center;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #93abe2;
+}
+.peek {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  margin-top: var(--sp-5);
+  text-align: left;
+}
+/* Grid items default to min-width:auto, so the covers rail would widen
+   the grid past the page instead of scrolling inside its own tile. */
+.peek > * {
+  min-width: 0;
+}
+.peek__card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-5);
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: var(--r-lg);
+}
+.peek__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.peek__ico {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.09);
+  color: #dbe6ff;
+}
+.peek__ico .soc-ico,
+.peek__ico .ico {
+  width: 21px;
+  height: 21px;
+}
+.peek__t {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: var(--fs-md);
+  color: #dbe6ff;
+}
+.peek__d {
+  margin-top: 1px;
+  font-size: var(--fs-xs);
+  color: #a8bef0;
+}
+/* Takes the slack, and centres it: the three tiles carry different
+   amounts of content, so without this the shortfall pools at the foot
+   of the two shorter ones instead of being split above and below. */
+.peek__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: var(--sp-4);
+}
+.peek__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-4);
+  font-size: var(--fs-xs);
+  color: #b9cbf5;
+}
+.peek__list li {
+  position: relative;
+  padding-left: var(--sp-4);
+}
+.peek__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.52em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+}
+/* Actions pinned to the bottom so three tiles of unequal content still
+   line their buttons up. */
+.peek__foot {
+  margin-top: auto;
+  padding-top: var(--sp-5);
+}
+/* One rank smaller than the buttons above, in height as well as fill. */
+.peek .btn {
+  padding: 0.7rem 1.3rem;
+  min-height: 42px;
+  font-size: var(--fs-xs);
+}
+
+/* Tile 1 — the webinar player. Recessed rather than raised: a panel on
+   a panel would add a third surface level to a section that already has
+   two. */
+.peek__player {
+  padding: var(--sp-4);
+  background: rgba(0, 0, 0, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--r-md);
+}
+.peek__pt {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  color: #dbe6ff;
+}
+.peek__pd {
+  margin-top: 2px;
+  font-size: var(--fs-xs);
+  color: #a8bef0;
+}
+/* The native control is a solid white pill — the brightest thing left
+   below the ask, so it gets taken down a notch too, and back to full
+   on hover. */
+.peek__audio {
+  width: 100%;
+  margin-top: var(--sp-3);
+  height: 36px;
+  opacity: 0.85;
+  transition: opacity var(--t);
+}
+.peek__audio:hover,
+.peek__audio:focus-within {
+  opacity: 1;
+}
+
+/* Tile 2 — three 9:16 covers: письмо, устная, аудирование. Capped in
+   width so that at one column they do not blow up to half a screen
+   each; below 780px .rail (base.css) turns them into a scroller. */
+.shorts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-3);
+  max-width: 340px;
+}
+.short {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: var(--r-md);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  opacity: 0.9;
+  transition: opacity var(--t);
+}
+.shorts:hover .short,
+.shorts:focus-visible .short {
+  opacity: 1;
+}
+/* Not links: there is no reliable per-video URL, and a cover that
+   promises one video and delivers a feed is worse than a cover that
+   promises nothing. The platform row below carries the click. */
+/* 2×2, not a single row: four names never fit one line inside a third
+   of the grid, and a 3+1 wrap looks like a mistake. */
+.plats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-2);
+  font-size: var(--fs-xs);
+}
+.plats__l {
+  margin-bottom: var(--sp-3);
+  text-align: center;
+  font-size: var(--fs-xs);
+  color: #a8bef0;
+}
+/* Chips, not bare words: on a dark panel four plain-text platform names
+   read as a caption, and nothing about them says they can be clicked. */
+.plat {
+  padding: 0.45rem 0.6rem;
+  text-align: center;
+  /* 2px to match .btn--outline in the same tiles — the two sit one
+     above the other, and a hairline beside a 2px rim reads as a bug. */
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--r-full);
+  font-family: var(--font-head);
+  font-weight: 700;
+  color: #cfdcfb;
+  transition:
+    color var(--t),
+    background var(--t),
+    border-color var(--t);
+}
+.plat:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--white);
+}
+
+/* Tile 3 — long-form. Thumb beside the title, not above it: at a third
+   of the width a 16:9 thumb with a caption under it would push the
+   tile taller than the other two for the least-watched content. */
+.peek__vid {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: var(--fs-xs);
+  color: #c9d8fa;
+  transition: color var(--t);
+}
+.peek__vid + .peek__vid {
+  margin-top: var(--sp-3);
+}
+.peek__vid:hover {
+  color: var(--white);
+}
+.peek__thumb {
+  flex: none;
+  width: 96px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: var(--r-sm);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  opacity: 0.9;
+  transition: opacity var(--t);
+}
+.peek__vid:hover .peek__thumb {
+  opacity: 1;
+}
+
+@media (max-width: 980px) {
+  .peek {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 780px) {
+  /* .rail takes over below 780px (base.css): the grid becomes a
+     horizontal scroller, so the covers need an explicit width.
+     The rail's page-gutter bleed has to be cancelled here — inside a
+     padded tile it breaks out of the card and widens the document. */
+  .shorts {
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+  .shorts .short {
+    width: 132px;
+    flex: none;
   }
 }

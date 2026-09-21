@@ -369,6 +369,19 @@ h4 {
   box-shadow: var(--sh-md);
 }
 
+/* A rank below --light on the accent ground: an outline, so a tile
+   action in the CTA section cannot compete with the filled ask above. */
+.btn--outline {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.26);
+  color: #dbe6ff;
+}
+.btn--outline:hover {
+  border-color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
 .btn--wide {
   width: 100%;
 }
@@ -591,109 +604,60 @@ h4 {
 }
 
 /* ── Footer ────────────────────────────────────────────── */
+/* ── Footer ────────────────────────────────────────────────
+   Deliberately thin, and now down to two rows: the tiles at the foot
+   of #contact carry every outbound link and the sticky CTA carries the
+   ask, so nothing here needs to compete for a click. Identity, then
+   legal. */
 .footer {
   background: var(--blue-50);
   border-top: 1px solid var(--blue-100);
-  padding: var(--sp-9) var(--gutter) var(--sp-6);
+  padding: var(--sp-6) var(--gutter) var(--sp-5);
 }
 .footer__inner {
   max-width: var(--maxw);
   margin-inline: auto;
-  display: grid;
-  /* 4 columns since the socials split into "Связаться" (booking) and
-     "Каналы" (follow) — mixing the two read as one undifferentiated list. */
-  grid-template-columns: 1.5fr 0.9fr 1.1fr 1.1fr;
-  gap: var(--sp-8);
-  padding-bottom: var(--sp-7);
+  display: flex;
+  justify-content: center;
+  padding-bottom: var(--sp-5);
   border-bottom: 1px solid var(--blue-200);
 }
 .footer__logo {
   font-family: var(--font-head);
   font-weight: 800;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   color: var(--blue-700);
+  flex: none;
 }
 .footer__logo em {
   font-style: normal;
   color: var(--amber-500);
 }
-.footer__tagline {
-  margin-top: var(--sp-2);
-  font-size: var(--fs-sm);
-  color: var(--gray-500);
-  max-width: 30ch;
-}
-.footer__legal {
-  margin-top: var(--sp-4);
-  font-size: var(--fs-xs);
-  color: var(--gray-400);
-}
-.footer__title {
-  font-family: var(--font-head);
-  font-weight: 700;
-  font-size: var(--fs-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--blue-500);
-  margin-bottom: var(--sp-4);
-}
-.footer__list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-3);
-}
-.footer__list a,
-.footer__soc {
-  font-size: var(--fs-sm);
-  color: var(--gray-600);
-  transition: color var(--t);
-}
-.footer__list a:hover,
-.footer__soc:hover {
-  color: var(--blue-700);
-}
-.footer__soc {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--sp-2);
-  margin-bottom: var(--sp-3);
-}
-/* .footer__soc is inline-flex so its hover target hugs the text; short
-   labels like "YouTube" and "TikTok" would otherwise pair up on one line.
-   The column wrapper forces one per row without changing the link box. */
-.footer__socs {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.footer__soc .soc-ico {
-  width: 20px;
-  height: 20px;
-  color: var(--blue-500);
-  transition: color var(--t);
-}
-.footer__soc:hover .soc-ico {
-  color: var(--blue-700);
-}
+
 .footer__bottom {
   max-width: var(--maxw);
-  margin: var(--sp-5) auto 0;
+  margin: var(--sp-4) auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--sp-2) var(--sp-5);
   font-size: var(--fs-xs);
   color: var(--gray-400);
-  text-align: center;
+}
+.footer__bottom a {
+  color: var(--gray-400);
+  transition: color var(--t);
+}
+.footer__bottom a:hover {
+  color: var(--blue-700);
 }
 
-@media (max-width: 1040px) {
-  .footer__inner {
-    grid-template-columns: 1fr 1fr;
-    row-gap: var(--sp-7);
-  }
-}
-
-@media (max-width: 560px) {
-  .footer__inner {
-    grid-template-columns: 1fr;
-    gap: var(--sp-6);
+/* Below 720px the copyright and the policy link stack, and centring
+   reads better than a space-between that strands one of them. */
+@media (max-width: 720px) {
+  .footer__bottom {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -701,18 +665,9 @@ h4 {
    a 1024px iPad is still a thumb, and these links sit at 20–26px
    tall by default, well under the ~44px a finger needs. */
 @media (pointer: coarse) {
-  .footer__list {
-    gap: 0;
-  }
-  .footer__list a {
-    display: block;
-    padding: var(--sp-3) 0;
-  }
-  .footer__soc {
-    padding: var(--sp-2) 0;
-    margin-bottom: var(--sp-1);
-  }
-  .footer__policy {
+  .footer__bottom a,
+  .plat {
+    display: inline-block;
     padding-block: var(--sp-2);
   }
 }
@@ -834,17 +789,6 @@ h4 {
   body[data-cookie="visible"] {
     padding-bottom: calc(84px + var(--cookie-h, 0px));
   }
-}
-
-.footer__policy {
-  display: inline-block;
-  margin-top: var(--sp-3);
-  font-size: var(--fs-xs);
-  color: var(--gray-500);
-  border-bottom: 1px solid var(--gray-300);
-}
-.footer__policy:hover {
-  color: var(--blue-700);
 }
 
 /* ── Short viewports (phone in landscape) ──────────────────
