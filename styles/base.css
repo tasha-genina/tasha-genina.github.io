@@ -1,14 +1,7 @@
-/* ============================================================
-   BASE — design system
-   Tokens, reset, typography, buttons, nav, footer.
-   Rules that matter:
-     · amber is CTA-only. Never decorative.
-     · three section tones: plain / tint / accent. Accent twice max.
-     · one icon system: inline Lucide, stroke: currentColor.
-   ============================================================ */
+/* BASE — design system */
 
 :root {
-  /* ── Blues: structure, hierarchy, everything non-CTA ── */
+  /* Blues: structure, hierarchy, everything non-CTA */
   --blue-50: #eff6ff;
   --blue-100: #dbeafe;
   --blue-200: #bfdbfe;
@@ -20,15 +13,13 @@
   --blue-800: #1e40af;
   --blue-950: #131f45;
 
-  /* ── Red: signal ONLY. The deadline dot and nothing else — it is not
-     a third brand colour and never carries text or a surface. ── */
-  --red-600: #dc2626;
+    --red-600: #dc2626;
 
-  /* ── Amber: CTA ONLY ── */
+  /* Amber: CTA ONLY */
   --amber-500: #f59e0b;
   --amber-600: #d97706;
 
-  /* ── Neutrals ── */
+  /* Neutrals */
   --white: #ffffff;
   --gray-50: #f9fafb;
   --gray-100: #f3f4f6;
@@ -43,7 +34,7 @@
   --font-head: "Nunito", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
 
-  /* ── Type scale ── */
+  /* Type scale */
   --fs-xs: 0.8125rem;
   --fs-sm: 1rem;
   --fs-base: 1.0625rem;
@@ -54,7 +45,7 @@
   --fs-h1: clamp(2.05rem, 1.2rem + 3.6vw, 3.35rem);
   --fs-num: clamp(2.25rem, 1.4rem + 3vw, 3.25rem);
 
-  /* ── Space scale ── */
+  /* Space scale */
   --sp-1: 0.25rem;
   --sp-2: 0.5rem;
   --sp-3: 0.75rem;
@@ -83,7 +74,7 @@
   --t: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ── Reset ─────────────────────────────────────────────── */
+/* Reset */
 *,
 *::before,
 *::after {
@@ -141,7 +132,7 @@ button {
   border-radius: 4px;
 }
 
-/* ── Icons: one system ─────────────────────────────────── */
+/* Icons: one system */
 .ico {
   width: 24px;
   height: 24px;
@@ -163,7 +154,7 @@ button {
   stroke-width: 1.6;
 }
 
-/* ── Layout ────────────────────────────────────────────── */
+/* Layout */
 .section {
   padding: var(--section-y) var(--gutter);
 }
@@ -194,7 +185,7 @@ button {
   color: #e4ecff;
 }
 
-/* ── Typography ────────────────────────────────────────── */
+/* Typography */
 h1,
 h2,
 h3,
@@ -259,12 +250,7 @@ h4 {
   margin-bottom: var(--sp-8);
 }
 
-/* ── Mobile card rails ─────────────────────────────────────
-   Peer items (cases, reviews, formats) become a swipeable rail
-   below 780px. Stacking them costs ~2,700px of scroll for
-   content the reader takes in one card at a time anyway.
-   NB: the default `.rail-hint { display: none }` must come
-   BEFORE the media query, or it wins on source order. */
+/* Mobile card rails */
 .rail-hint {
   display: none;
 }
@@ -295,9 +281,7 @@ h4 {
     display: block;
     margin-top: var(--sp-3);
     font-size: var(--fs-xs);
-    /* Arrows alone, so they need room to read as a gesture cue
-       rather than as two stray glyphs. */
-    letter-spacing: 0.6em;
+        letter-spacing: 0.6em;
     text-indent: 0.6em;
     color: var(--gray-500);
     text-align: center;
@@ -312,7 +296,7 @@ h4 {
   }
 }
 
-/* ── Buttons ───────────────────────────────────────────── */
+/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -334,7 +318,6 @@ h4 {
   text-align: center;
 }
 
-/* The only amber on the page. */
 .btn--cta {
   background: var(--amber-500);
   border-color: var(--amber-500);
@@ -369,8 +352,6 @@ h4 {
   box-shadow: var(--sh-md);
 }
 
-/* A rank below --light on the accent ground: an outline, so a tile
-   action in the CTA section cannot compete with the filled ask above. */
 .btn--outline {
   background: transparent;
   border-color: rgba(255, 255, 255, 0.26);
@@ -386,7 +367,7 @@ h4 {
   width: 100%;
 }
 
-/* ── Nav ───────────────────────────────────────────────── */
+/* Nav */
 .nav {
   position: sticky;
   top: 0;
@@ -507,39 +488,25 @@ h4 {
   }
 }
 
-/* ── Sticky announcement strip ─────────────────────────────
-   Sits under the nav and stays there. Flat and full-bleed so it
-   reads as a bar, not as a button. Navy, not amber: white on
-   amber-500 is 2.15:1 and fails AA for text this small, while
-   navy is 16:1 — and it leaves amber to mean "click here", which
-   is what it means everywhere else on the page. */
+/* Sticky announcement strip */
 .notice {
   position: sticky;
   top: 69px;              /* nav is 68px + 1px border */
   z-index: 199;
   background: var(--blue-950);
-  /* No padding here: the link owns it, so the whole bar edge to edge is
-     clickable rather than just the run of text inside it. */
+  /* No padding here: the link owns it, so the tap target is the whole bar. */
 }
 .notice__text {
   max-width: var(--maxw);
   margin-inline: auto;
   display: block;
   font-size: var(--fs-xs);
-  font-weight: 600;            /* a bar reads as one object; the weight holds it together */
-  line-height: 1.4;
+  font-weight: 600;  line-height: 1.4;
   color: var(--white);
   text-align: center;
 }
 .notice__text .ico { color: rgba(255, 255, 255, 0.85); }
 
-/* The strip is a banner everywhere else, but the webinar has a destination,
-   so this one is a link. Underline only on hover/focus — a permanently
-   underlined full-width bar reads as broken, not as clickable. */
-/* A full-width bar gives no hint that it is clickable, so the affordance is
-   carried by its tail: the destination is styled as a link and an arrow says
-   it leads somewhere. Underlining the whole bar instead would read as broken
-   text, and a filled amber button here would fight the nav's real CTA. */
 .notice__link {
   display: block;
   padding: 0.45rem var(--gutter);
@@ -552,7 +519,7 @@ h4 {
   background: #1b2c63;         /* one step up from blue-950, still 13:1 on white */
 }
 .notice__go {
-  color: var(--amber-500);     /* 7.5:1 on the navy — and amber means "click" sitewide */
+  color: var(--amber-500);     /* 7.5:1 on the navy */
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
@@ -580,7 +547,7 @@ h4 {
   .notice__text .ico { display: none; }
 }
 
-/* ── Sticky mobile CTA ─────────────────────────────────── */
+/* Sticky mobile CTA */
 .sticky-cta {
   position: fixed;
   left: 0;
@@ -614,12 +581,7 @@ h4 {
   }
 }
 
-/* ── Footer ────────────────────────────────────────────── */
-/* ── Footer ────────────────────────────────────────────────
-   Deliberately thin, and now down to two rows: the tiles at the foot
-   of #contact carry every outbound link and the sticky CTA carries the
-   ask, so nothing here needs to compete for a click. Identity, then
-   legal. */
+/* Footer */
 .footer {
   background: var(--blue-50);
   border-top: 1px solid var(--blue-100);
@@ -663,8 +625,7 @@ h4 {
   color: var(--blue-700);
 }
 
-/* Below 720px the copyright and the policy link stack, and centring
-   reads better than a space-between that strands one of them. */
+/* Below 720px the copyright and the policy link stack. */
 @media (max-width: 720px) {
   .footer__bottom {
     flex-direction: column;
@@ -690,7 +651,7 @@ h4 {
   }
 }
 
-/* ── Motion ────────────────────────────────────────────── */
+/* Motion */
 .reveal {
   opacity: 0;
   transform: translateY(18px);
@@ -719,9 +680,7 @@ h4 {
   }
 }
 
-/* ── Cookie notice ─────────────────────────────────────────
-   Informational, not a consent gate. One line, dismissed for good.
-   Sits below the sticky CTA so it never covers the primary action. */
+/* Cookie notice */
 .cookie {
   position: fixed;
   left: 0;
@@ -802,13 +761,7 @@ h4 {
   }
 }
 
-/* ── Short viewports (phone in landscape) ──────────────────
-   At 375px tall the nav, the amber strip, the sticky CTA and the
-   cookie bar together claimed 256px — 68% of the screen — leaving
-   about four lines of the actual page visible. Everything sticky
-   gets compressed, and the strip stops following the scroll: it
-   still greets people at the top, it just isn't worth a permanent
-   seventh of a landscape screen. */
+/* Short viewports (phone in landscape) */
 @media (max-height: 500px) and (orientation: landscape) {
   .nav__inner {
     height: 52px;
