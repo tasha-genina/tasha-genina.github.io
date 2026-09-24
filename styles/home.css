@@ -121,27 +121,6 @@
      joins the chips as a third row instead of closing the block. */
   margin-top: var(--sp-6);
 }
-.hero__actions .soc-ico {
-  width: 20px;
-  height: 20px;
-}
-/* The second-choice messenger, visibly second: its own line, a size down
-   from the micro copy above it. */
-.hero__altline {
-  margin-top: var(--sp-2);
-  font-size: var(--fs-xs);
-  color: var(--gray-400);
-}
-.hero__alt {
-  color: var(--gray-500);
-  border-bottom: 1px solid var(--gray-200);
-  white-space: nowrap;
-  transition: color var(--t), border-color var(--t);
-}
-.hero__alt:hover {
-  color: var(--blue-700);
-  border-bottom-color: var(--blue-300);
-}
 .hero__micro {
   font-size: var(--fs-sm);
   color: var(--gray-500);
@@ -1257,9 +1236,34 @@
   font-size: var(--fs-sm);
   color: #a8bef0;
 }
-.final__btns .soc-ico {
-  width: 20px;
-  height: 20px;
+/* ── Shared: consent line under the enquiry button ─────── */
+/* The form itself lives on forms.yandex.ru and carries Yandex's own
+   notice; this line is ours, and it replaces a checkbox on purpose —
+   a checkbox would cost more friction than the whole one-field form
+   saves. Sits in both the light offer block and the accent final one. */
+.consent {
+  margin-top: var(--sp-3);
+  font-size: var(--fs-xs);
+  color: var(--gray-500);
+}
+.consent a {
+  color: inherit;
+  border-bottom: 1px solid var(--gray-300);
+  transition: color var(--t), border-color var(--t);
+}
+.consent a:hover {
+  color: var(--blue-700);
+  border-bottom-color: var(--blue-300);
+}
+.s-accent .consent {
+  color: #8fa9e6;
+}
+.s-accent .consent a {
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+.s-accent .consent a:hover {
+  color: #e4ecff;
+  border-bottom-color: rgba(255, 255, 255, 0.6);
 }
 
 /* ── Shared: mid-page CTA row ──────────────────────────── */
@@ -1493,10 +1497,6 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--sp-3);
-}
-.offer__btns .soc-ico {
-  width: 20px;
-  height: 20px;
 }
 .offer__note {
   max-width: 54ch;
