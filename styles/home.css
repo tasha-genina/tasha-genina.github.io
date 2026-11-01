@@ -86,9 +86,6 @@
 .hero__facts--proof {
   margin-top: var(--sp-5);
 }
-.hero__facts--offer {
-  margin-top: var(--sp-4);
-}
 
 .hero__actions {
   display: flex;
@@ -157,9 +154,6 @@
   .hero {
     padding-top: var(--sp-5);
   }
-  .deadline {
-    margin-bottom: var(--sp-3);
-  }
   .hero__title {
     font-size: clamp(1.75rem, 1rem + 2.2vw, 2.4rem);
   }
@@ -169,9 +163,6 @@
   }
     .hero__facts--proof {
     margin-top: var(--sp-4);
-  }
-  .hero__facts--offer {
-    margin-top: var(--sp-3);
   }
   .hero__actions {
     margin-top: var(--sp-4);
@@ -186,7 +177,6 @@
     grid-template-columns: 1fr;
     gap: var(--sp-5);
   }
-    .deadline,
   .hero__facts li {
     padding: 6px var(--sp-2);
     font-size: var(--fs-xs);
@@ -1480,46 +1470,6 @@
     padding-bottom: var(--sp-5);
   }
 }
-/* Deadline chip */
-/* Everything but the pulsing dot is inherited from .hero__facts li. */
-.deadline {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--sp-2);
-  white-space: nowrap;
-}
-.deadline__dot {
-  position: relative;
-  flex: none;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--red-600);
-}
-.deadline__dot::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: var(--red-600);
-  animation: deadline-pulse 2.4s ease-out infinite;
-}
-@keyframes deadline-pulse {
-  from {
-    opacity: 0.55;
-    transform: scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: scale(2.8);
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .deadline__dot::after {
-    animation: none;
-  }
-}
-
 /* S4c · Подписывайтесь в соцсетях */
 .peek {
   display: grid;
